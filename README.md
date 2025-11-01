@@ -22,7 +22,10 @@ mise install
 # Install dependencies
 npm install
 
-# Run on connected iPhone
+# Start development server which prompts with options to run in emulators etc.
+mise run start
+
+# Or, run on connected iPhone
 mise run iphone
 ```
 
@@ -53,6 +56,23 @@ npm test TurnScore.test.tsx -- -u
 # Update snapshots interactively (review each one)
 npm test -- -u --watch
 ```
+
+## Design
+
+[View the Figma file](https://www.figma.com/design/lCJ8XhCWfVsKZvvKXi9eH6/Cribbage-Board?node-id=0-1&t=0OJlnSoBspa4lgN2-1)
+
+### Design System
+
+- **Variables**: Color palette defined in Figma variables
+- **Components**: Reusable components with variants available in Figma library
+- **Orientation**: Design splits the screen in half vertically so that it is right-side-up if the device is in portrait mode orientation between two people
+
+### Implementation Status
+
+- **High-Fidelity Comp**: ✅ Complete
+- **Component Library**: ✅ Built with variants
+- **State Variations**: 🚧 In Progress (expanding beyond static comp)
+- **Interactive Prototype**: 🚧 In Progress
 
 ## Tech Stack
 
