@@ -59,7 +59,9 @@ npm test -- -u --watch
 
 ## Design
 
-[View the Figma file](https://www.figma.com/design/lCJ8XhCWfVsKZvvKXi9eH6/Cribbage-Board?node-id=0-1&t=0OJlnSoBspa4lgN2-1)
+[View the Figma file]([https://www.figma.com/design/lCJ8XhCWfVsKZvvKXi9eH6/Cribbage-Board?node-id=0-1&t=0OJlnSoBspa4lgN2-1](https://www.figma.com/design/VzH7RgiOq6Q2B3O73NJe36/Cribbage-Board?node-id=19-57&m=dev)
+
+The Figma file is publicly viewable, and the Full Comp page contains developer annotations.
 
 ### Design System
 
