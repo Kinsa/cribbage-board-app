@@ -73,7 +73,7 @@ The Figma file is publicly viewable, and the Full Comp page contains developer a
 
 - [x] High-Fidelity Comp: 
 - [x] Component Library
-- [ ] State Variations
+- [x] State Variations
 - [ ] Interactive Prototype
 
 ## Tech Stack
