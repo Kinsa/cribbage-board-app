@@ -85,14 +85,15 @@ The Figma file is publicly viewable.
 - [x] Component Library
 - [x] State Variations
 - [-] Interactive Prototype
-    - [ ] If Player 1 presses the Add button, it should have the same effect as if Player 2 pressed the Clear button 
+    - [ ] If Player 1 presses the Add button, it should have the same effect as if Player 2 pressed the Clear button on their Current Points Value (can try using Figma Make to do this)
     - [ ] EXPLORE: does the Win screen need a new game button?
-- [x] React Native Proof of Concept SVG Animation
+- [x] React Native Proof of Concept SVG Animation; tap to add, tap and hold to add 5, adding clears other player's Current Points Value
 - [ ] Update this project to use the [tokens project](https://github.com/Kinsa/cribbage-board-app-tokens) (possibly moving away from Tailwind) and fixing application of styles in so-doing
     - [ ] Publish the tokens project to NPM
     - [ ] Document back-porting changes from the tokens project into Figma
-- [ ] [Storybook components](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/simple-component/)
+- [ ] Implement [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/simple-component/) for existing components and use for addition of any further components, updating the documentation here
 - [ ] Develop the Icon
+- [ ] Develop the Clear and Undo buttons
 - [ ] Develop the Win screen variations
 - [ ] Develop new game dialog using an [alert](https://reactnative.dev/docs/alert)
 
