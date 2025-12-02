@@ -61,20 +61,46 @@ npm test -- -u --watch
 
 [View the Figma file](https://www.figma.com/design/VzH7RgiOq6Q2B3O73NJe36/Cribbage-Board?node-id=19-57&m=dev)
 
-The Figma file is publicly viewable, and the Full Comp page contains developer annotations, which are available in [Dev Mode](https://help.figma.com/hc/en-us/articles/15023124644247-Guide-to-Dev-Mode) (requires a paid seat to access).
+The Figma file is publicly viewable.
 
-### Design System
+### Variables
 
-- **Variables**: Color palette defined in Figma variables
+- **Variable Collections**: 
+    - **Primitives**: Primitive tokens which form the basis for the semantic tokens
+    - **Tokens**: Semantic tokens - currently only comprising the color palette
+    - **Game Interactions**: Variables used in the Game Interaction Prototype
+
+### Pages
+
 - **Components**: Reusable components with variants available in Figma library
-- **Orientation**: Design splits the screen in half vertically so that it is right-side-up if the device is in portrait mode orientation between two people
+- **App Icon**: Light and dark versions of the application icon
+- **High Fidelity Comps**: contain developer annotations (requires a paid seat to access)
+    - **Cribbage Board**: The main app screen where game play happens. Design is split around the center axis so half of the screen is upright for each player. 
+    - **Winner**: Winner announcement page. Indicates a win, skunk, or double skunk and by which player.
+- **Game Interactions Prototype**: Prototypes the Add, Clear, and Undo button interactions relative to the Current Points Value and Total Points Value
 
-### Implementation Status
+## Implementation Status
 
-- [x] High-Fidelity Comp: 
+- [x] High-Fidelity Comp
 - [x] Component Library
 - [x] State Variations
-- [ ] Interactive Prototype
+- [-] Interactive Prototype
+    - [ ] If Player 1 presses the Add button, it should have the same effect as if Player 2 pressed the Clear button 
+    - [ ] EXPLORE: does the Win screen need a new game button?
+- [x] React Native Proof of Concept SVG Animation
+- [ ] Update this project to use the [tokens project](https://github.com/Kinsa/cribbage-board-app-tokens) (possibly moving away from Tailwind) and fixing application of styles in so-doing
+    - [ ] Publish the tokens project to NPM
+    - [ ] Document back-porting changes from the tokens project into Figma
+- [ ] [Storybook components](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/simple-component/)
+- [ ] Develop the Icon
+- [ ] Develop the Win screen variations
+- [ ] Develop new game dialog using an [alert](https://reactnative.dev/docs/alert)
+
+### Phase 2
+
+- [ ] Develop night mode
+- [ ] EXPLORE: On the win screen, should the tail wag?
+- [ ] EXPLORE: On the win screen, if it is a skunk or double skunk should their be a poot cloud or double poot cloud behind the tail?
 
 ## Tech Stack
 
