@@ -1,13 +1,14 @@
+import { colors } from '@/constants/colors';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import AddButton from '../AddButton';
 
 describe('AddButton Component', () => {
   test.each([
-    { player: 1, expectedClass: 'text-player-one' },
-    { player: 2, expectedClass: 'text-player-two' },
+    { player: 1, expectedColor: { color: colors.player.one } },
+    { player: 2, expectedColor: { color: colors.player.two } },
   ])(
     'player $player contains addition symbol with correct styling',
-    ({ player, expectedClass }) => {
+    ({ player, expectedColor }) => {
       const mockPress = jest.fn();
       const mockLongPress = jest.fn();
 
@@ -22,7 +23,7 @@ describe('AddButton Component', () => {
       // Check the text inside the button
       const plusText = screen.getByText('+');
       expect(plusText).toBeOnTheScreen();
-      expect(plusText.props.className).toContain(expectedClass);
+      expect(plusText.props.style).toEqual(expect.arrayContaining([expectedColor]));
 
       // Check the press interaction
       fireEvent.press(button);

@@ -23,7 +23,9 @@ exports[`renders correctly for player 1 1`] = `
   accessible={true}
   collapsable={false}
   focusable={true}
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -31,14 +33,43 @@ exports[`renders correctly for player 1 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    {
-      "opacity": 1,
-    }
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#FAF8F8",
+        "borderRadius": 80,
+        "height": 160,
+        "justifyContent": "center",
+        "margin": 8,
+        "paddingHorizontal": 20,
+        "paddingVertical": 12,
+        "width": 160,
+      },
+      {
+        "alignSelf": "flex-start",
+        "transform": [
+          {
+            "rotate": "180deg",
+          },
+        ],
+      },
+    ]
   }
   testID="add-button-1"
 >
   <Text
-    className="text-center text-7xl font-bold text-player-one"
+    style={
+      [
+        {
+          "fontSize": 48,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        },
+        {
+          "color": "#4C9D00",
+        },
+      ]
+    }
   >
     +
   </Text>
@@ -68,7 +99,9 @@ exports[`renders correctly for player 2 1`] = `
   accessible={true}
   collapsable={false}
   focusable={true}
+  onBlur={[Function]}
   onClick={[Function]}
+  onFocus={[Function]}
   onResponderGrant={[Function]}
   onResponderMove={[Function]}
   onResponderRelease={[Function]}
@@ -76,14 +109,38 @@ exports[`renders correctly for player 2 1`] = `
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
   style={
-    {
-      "opacity": 1,
-    }
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#FAF8F8",
+        "borderRadius": 80,
+        "height": 160,
+        "justifyContent": "center",
+        "margin": 8,
+        "paddingHorizontal": 20,
+        "paddingVertical": 12,
+        "width": 160,
+      },
+      {
+        "alignSelf": "flex-end",
+      },
+    ]
   }
   testID="add-button-2"
 >
   <Text
-    className="text-center text-7xl font-bold text-player-two"
+    style={
+      [
+        {
+          "fontSize": 48,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        },
+        {
+          "color": "#0073E6",
+        },
+      ]
+    }
   >
     +
   </Text>

@@ -1,12 +1,6 @@
-import { type ClassValue, clsx } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-import { useEffect, useRef } from 'react';
-import { Accelerometer } from 'expo-sensors';
 import * as Haptics from 'expo-haptics';
-
-export const cn = (...inputs: ClassValue[]) => {
-  return twMerge(clsx(inputs));
-};
+import { Accelerometer } from 'expo-sensors';
+import { useEffect, useRef } from 'react';
 
 export const useIOSShakeToUndo = (onShake: () => void) => {
   const accelerationHistory = useRef<number[]>([]);

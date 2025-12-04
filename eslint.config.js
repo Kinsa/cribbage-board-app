@@ -35,10 +35,6 @@ module.exports = defineConfig([
       // Prettier integration
       'prettier/prettier': 'error',
 
-      // Disable Tailwind classnames-order since PyCharm handles it
-      'tailwindcss/classnames-order': 'off',
-      'tailwindcss/no-custom-classname': 'off',
-
       // Unused imports - TypeScript projects
       '@typescript-eslint/no-unused-vars': [
         'error',

@@ -2,7 +2,25 @@
 
 exports[`renders correctly for player 1 with 5 points 1`] = `
 <Text
-  className="absolute font-bold text-7xl text-player-one left-8 rotate-180 bottom-[65%]"
+  style={
+    [
+      {
+        "fontSize": 48,
+        "fontWeight": "bold",
+        "position": "absolute",
+      },
+      {
+        "bottom": "65%",
+        "color": "#4C9D00",
+        "left": 32,
+        "transform": [
+          {
+            "rotate": "180deg",
+          },
+        ],
+      },
+    ]
+  }
   testID="turn-score-1"
 >
   5
@@ -11,7 +29,20 @@ exports[`renders correctly for player 1 with 5 points 1`] = `
 
 exports[`renders correctly for player 2 with 42 points 1`] = `
 <Text
-  className="absolute font-bold text-7xl text-player-two right-8 top-[65%]"
+  style={
+    [
+      {
+        "fontSize": 48,
+        "fontWeight": "bold",
+        "position": "absolute",
+      },
+      {
+        "color": "#0073E6",
+        "right": 32,
+        "top": "65%",
+      },
+    ]
+  }
   testID="turn-score-2"
 >
   42

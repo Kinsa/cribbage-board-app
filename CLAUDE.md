@@ -46,7 +46,6 @@ This is a React Native application using Expo framework with the following key t
 - **Expo Router** (v5) - File-based routing for navigation
 - **React Native** (0.79.6) with React 19
 - **TypeScript** - Strict mode enabled
-- **NativeWind** (v4) - Tailwind CSS for React Native styling
 
 ### Project Structure
 
@@ -55,11 +54,6 @@ This is a React Native application using Expo framework with the following key t
   - `index.tsx` - Home screen
 - `/components/` - Reusable React components
   - `CribbageBoard.tsx` - SVG-based cribbage board visualization
-- `/global.css` - Global Tailwind CSS styles
-
-### Styling Approach
-
-The project uses NativeWind with Tailwind CSS classes for styling. Components use `className` props with Tailwind utility classes instead of StyleSheet objects.
 
 ### Key Implementation Details
 

@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import Svg, { Path } from 'react-native-svg';
 import { colors } from '@/constants/colors';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
 
 interface CribbageBoardProps {
   player1Points: number;
@@ -112,9 +112,9 @@ const CribbageBoard = ({ player1Points, player2Points, width = 52 }: CribbageBoa
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    flex: 1,
   },
   boardContainer: {
     alignItems: 'center',

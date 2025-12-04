@@ -2,17 +2,58 @@
 
 exports[`renders correctly for player 1 with 5 points 1`] = `
 <View
-  className="absolute font-bold text-base flex flex-row items-end text-player-one left-40 rotate-180 bottom-[75%]"
+  style={
+    [
+      {
+        "alignItems": "flex-end",
+        "flexDirection": "row",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "position": "absolute",
+      },
+      {
+        "bottom": "75%",
+        "color": "#4C9D00",
+        "left": 160,
+        "transform": [
+          {
+            "rotate": "180deg",
+          },
+        ],
+      },
+    ]
+  }
   testID="total-score-1"
 >
   <Text
-    className="font-bold text-base text-player-one"
+    style={
+      [
+        {
+          "fontSize": 16,
+          "fontWeight": "bold",
+        },
+        {
+          "color": "#4C9D00",
+        },
+      ]
+    }
     testID="total-score-1-text"
   >
     5
   </Text>
   <Text
-    className="text-sm text-surface-subtle font-normal"
+    style={
+      [
+        {
+          "fontSize": 16,
+          "fontWeight": "bold",
+        },
+        {
+          "color": "#6F6F7B",
+          "fontWeight": "normal",
+        },
+      ]
+    }
   >
      / 121
   </Text>
@@ -21,17 +62,53 @@ exports[`renders correctly for player 1 with 5 points 1`] = `
 
 exports[`renders correctly for player 2 with 42 points 1`] = `
 <View
-  className="absolute font-bold text-base flex flex-row items-end text-player-two right-40 top-[75%]"
+  style={
+    [
+      {
+        "alignItems": "flex-end",
+        "flexDirection": "row",
+        "fontSize": 16,
+        "fontWeight": "bold",
+        "position": "absolute",
+      },
+      {
+        "color": "#0073E6",
+        "right": 160,
+        "top": "75%",
+      },
+    ]
+  }
   testID="total-score-2"
 >
   <Text
-    className="font-bold text-base text-player-two"
+    style={
+      [
+        {
+          "fontSize": 16,
+          "fontWeight": "bold",
+        },
+        {
+          "color": "#0073E6",
+        },
+      ]
+    }
     testID="total-score-2-text"
   >
     42
   </Text>
   <Text
-    className="text-sm text-surface-subtle font-normal"
+    style={
+      [
+        {
+          "fontSize": 16,
+          "fontWeight": "bold",
+        },
+        {
+          "color": "#6F6F7B",
+          "fontWeight": "normal",
+        },
+      ]
+    }
   >
      / 121
   </Text>

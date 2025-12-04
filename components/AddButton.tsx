@@ -1,5 +1,5 @@
-import { Text, TouchableOpacity } from 'react-native';
-import { cn } from '@/utils';
+import { colors } from '@/constants/colors';
+import { Pressable, StyleSheet, Text } from 'react-native';
 
 interface ButtonProps {
   player: number;
@@ -9,26 +9,49 @@ interface ButtonProps {
 
 export default function AddButton({ player, pressFunction, longPressFunction }: ButtonProps) {
   return (
-    <TouchableOpacity
+    <Pressable
       testID={`add-button-${player}`}
       accessibilityRole="button"
-      className={cn(
-        'm-2 px-5 py-3 bg-surface-lowContrast w-[160px] h-[160px] rounded-full flex items-center justify-center',
-        player === 1 ? 'rotate-180 self-start' : 'self-end'
-      )}
+      style={[styles.button, player === 1 ? styles.buttonPlayer1 : styles.buttonPlayer2]}
       onPress={() => {
         pressFunction();
       }}
       onLongPress={() => {
         longPressFunction();
       }}>
-      <Text
-        className={cn(
-          'text-center text-7xl font-bold',
-          player === 1 ? 'text-player-one' : 'text-player-two'
-        )}>
-        +
-      </Text>
-    </TouchableOpacity>
+      <Text style={[styles.text, player === 1 ? styles.textPlayer1 : styles.textPlayer2]}>+</Text>
+    </Pressable>
   );
 }
+
+const styles = StyleSheet.create({
+  button: {
+    margin: 8,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    backgroundColor: colors.surface.lowContrast,
+    width: 160,
+    height: 160,
+    borderRadius: 80,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonPlayer1: {
+    transform: [{ rotate: '180deg' }],
+    alignSelf: 'flex-start',
+  },
+  buttonPlayer2: {
+    alignSelf: 'flex-end',
+  },
+  text: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  textPlayer1: {
+    color: colors.player.one,
+  },
+  textPlayer2: {
+    color: colors.player.two,
+  },
+});

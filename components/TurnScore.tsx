@@ -1,5 +1,5 @@
-import { cn } from '@/utils';
-import { Text } from 'react-native';
+import { colors } from '@/constants/colors';
+import { StyleSheet, Text } from 'react-native';
 
 interface TurnScoreProps {
   player: number;
@@ -10,13 +10,27 @@ export default function TurnScore({ player, points }: TurnScoreProps) {
   return (
     <Text
       testID={`turn-score-${player}`}
-      className={cn(
-        'absolute font-bold text-7xl',
-        player === 1
-          ? 'text-player-one left-8 rotate-180 bottom-[65%]'
-          : 'text-player-two right-8 top-[65%]'
-      )}>
+      style={[styles.text, player === 1 ? styles.textPlayer1 : styles.textPlayer2]}>
       {points}
     </Text>
   );
 }
+
+const styles = StyleSheet.create({
+  text: {
+    position: 'absolute',
+    fontWeight: 'bold',
+    fontSize: 48,
+  },
+  textPlayer1: {
+    color: colors.player.one,
+    transform: [{ rotate: '180deg' }],
+    left: 32,
+    bottom: '65%',
+  },
+  textPlayer2: {
+    color: colors.player.two,
+    right: 32,
+    top: '65%',
+  },
+});

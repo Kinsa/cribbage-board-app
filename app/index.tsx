@@ -1,11 +1,11 @@
-import { View } from 'react-native';
-import { Stack } from 'expo-router';
-import { useState } from 'react';
-import { useIOSShakeToUndo } from '@/utils';
 import AddButton from '@/components/AddButton';
 import CribbageBoard from '@/components/CribbageBoard';
 import TotalScore from '@/components/TotalScore';
 import TurnScore from '@/components/TurnScore';
+import { useIOSShakeToUndo } from '@/utils';
+import { Stack } from 'expo-router';
+import { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 
 export default function HomeScreen() {
   const [player1Points, setPlayer1Points] = useState(0);
@@ -109,7 +109,7 @@ export default function HomeScreen() {
     <>
       <Stack.Screen options={{ headerShown: false }} />
 
-      <View className="flex-1 items-center justify-center bg-gray-100 px-8 pb-8 pt-16 relative">
+      <View style={styles.view}>
         <AddButton
           player={1}
           pressFunction={() => addPointsToBoard({ player: 1, points: 1 })}
@@ -129,3 +129,15 @@ export default function HomeScreen() {
     </>
   );
 }
+
+const styles = StyleSheet.create({
+  view: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingBottom: 8,
+    paddingTop: 48,
+    paddingHorizontal: 8,
+    position: 'relative',
+  },
+});
