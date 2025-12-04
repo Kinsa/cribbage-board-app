@@ -1,4 +1,4 @@
-import { colors } from '@/constants/colors';
+import variables from '@kinsa/cribbage-board-app-tokens';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
@@ -78,14 +78,24 @@ const CribbageBoard = ({ player1Points, player2Points, width = 52 }: CribbageBoa
           preserveAspectRatio="xMidYMid meet"
           style={styles.svg}>
           {/* Background tracks (dark grey) */}
-          <Path d={player1TrackPath} stroke={colors.surface.subtle} strokeWidth="1" fill="none" />
-          <Path d={player2TrackPath} stroke={colors.surface.subtle} strokeWidth="1" fill="none" />
+          <Path
+            d={player1TrackPath}
+            stroke={variables.light.surface.boardTrack}
+            strokeWidth="1"
+            fill="none"
+          />
+          <Path
+            d={player2TrackPath}
+            stroke={variables.light.surface.boardTrack}
+            strokeWidth="1"
+            fill="none"
+          />
 
           {/* Progress tracks (colored) */}
           {player1Progress > 0 && (
             <Path
               d={player1TrackPath}
-              stroke={colors.player.one}
+              stroke={variables.light.surface.player1}
               strokeWidth="4"
               fill="none"
               strokeLinecap="round"
@@ -96,7 +106,7 @@ const CribbageBoard = ({ player1Points, player2Points, width = 52 }: CribbageBoa
           {player2Progress > 0 && (
             <Path
               d={player2TrackPath}
-              stroke={colors.player.two}
+              stroke={variables.light.surface.player2}
               strokeWidth="4"
               fill="none"
               strokeLinecap="round"

@@ -38,6 +38,10 @@ description = "Run tests"
 run = "npm run test -- --coverage"
 description = "Test coverage report"
 
+[tasks.lint]
+run = "npm run lint"
+description = "Find code quality issues with ESLint"
+
 [tasks.lint-fix]
 run = "npm run lint:fix"
 description = "Fix code quality issues and format with prettier"

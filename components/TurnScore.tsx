@@ -1,4 +1,4 @@
-import { colors } from '@/constants/colors';
+import variables from '@kinsa/cribbage-board-app-tokens';
 import { StyleSheet, Text } from 'react-native';
 
 interface TurnScoreProps {
@@ -23,13 +23,13 @@ const styles = StyleSheet.create({
     fontSize: 48,
   },
   textPlayer1: {
-    color: colors.player.one,
+    color: variables.light.text.player1.primary,
     transform: [{ rotate: '180deg' }],
     left: 32,
     bottom: '65%',
   },
   textPlayer2: {
-    color: colors.player.two,
+    color: variables.light.text.player2.primary,
     right: 32,
     top: '65%',
   },

@@ -13,8 +13,7 @@ exports[`renders correctly for player 1 with 5 points 1`] = `
       },
       {
         "bottom": "75%",
-        "color": "#4C9D00",
-        "left": 160,
+        "left": 140,
         "transform": [
           {
             "rotate": "180deg",
@@ -33,7 +32,7 @@ exports[`renders correctly for player 1 with 5 points 1`] = `
           "fontWeight": "bold",
         },
         {
-          "color": "#4C9D00",
+          "color": "#316600",
         },
       ]
     }
@@ -49,7 +48,7 @@ exports[`renders correctly for player 1 with 5 points 1`] = `
           "fontWeight": "bold",
         },
         {
-          "color": "#6F6F7B",
+          "color": "#6f6f7b",
           "fontWeight": "normal",
         },
       ]
@@ -72,8 +71,7 @@ exports[`renders correctly for player 2 with 42 points 1`] = `
         "position": "absolute",
       },
       {
-        "color": "#0073E6",
-        "right": 160,
+        "right": 140,
         "top": "75%",
       },
     ]
@@ -88,7 +86,7 @@ exports[`renders correctly for player 2 with 42 points 1`] = `
           "fontWeight": "bold",
         },
         {
-          "color": "#0073E6",
+          "color": "#0059b2",
         },
       ]
     }
@@ -104,7 +102,7 @@ exports[`renders correctly for player 2 with 42 points 1`] = `
           "fontWeight": "bold",
         },
         {
-          "color": "#6F6F7B",
+          "color": "#6f6f7b",
           "fontWeight": "normal",
         },
       ]

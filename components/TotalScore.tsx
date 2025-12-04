@@ -1,4 +1,4 @@
-import { colors } from '@/constants/colors';
+import variables from '@kinsa/cribbage-board-app-tokens';
 import { StyleSheet, Text, View } from 'react-native';
 
 interface TotalScoreProps {
@@ -30,28 +30,26 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   viewPlayer1: {
-    left: 160,
+    left: 140,
     bottom: '75%',
     transform: [{ rotate: '180deg' }],
-    color: colors.player.one,
   },
   viewPlayer2: {
-    right: 160,
+    right: 140,
     top: '75%',
-    color: colors.player.two,
   },
   text: {
     fontWeight: 'bold',
     fontSize: 16,
   },
   textPlayer1: {
-    color: colors.player.one,
+    color: variables.light.text.player1.highContrast,
   },
   textPlayer2: {
-    color: colors.player.two,
+    color: variables.light.text.player2.highContrast,
   },
   textGameOver: {
     fontWeight: 'normal',
-    color: colors.surface.subtle,
+    color: variables.light.text.secondary,
   },
 });

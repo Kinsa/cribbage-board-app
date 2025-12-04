@@ -11,7 +11,7 @@ exports[`renders correctly for player 1 with 5 points 1`] = `
       },
       {
         "bottom": "65%",
-        "color": "#4C9D00",
+        "color": "#4c9d00",
         "left": 32,
         "transform": [
           {
@@ -37,7 +37,7 @@ exports[`renders correctly for player 2 with 42 points 1`] = `
         "position": "absolute",
       },
       {
-        "color": "#0073E6",
+        "color": "#0073e6",
         "right": 32,
         "top": "65%",
       },

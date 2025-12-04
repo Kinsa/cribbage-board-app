@@ -23,10 +23,14 @@
       "<rootDir>/jest.setup.js"
     ],
     "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/$1"
+      "^@/(.*)$": "<rootDir>/$1",
+      "^@kinsa/cribbage-board-app-tokens$": "<rootDir>/node_modules/@kinsa/cribbage-board-app-tokens/build/es/variables.mjs"
+    },
+    "transform": {
+      "^.+\\.mjs$": "babel-jest"
     },
     "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|react-native-css-interop)/)"
+      "node_modules/(?!((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|@kinsa/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|react-native-css-interop)/)"
     ]
   },
   "lint-staged": {
@@ -40,6 +44,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
+    "@kinsa/cribbage-board-app-tokens": "github:Kinsa/cribbage-board-app-tokens",
     "@react-navigation/bottom-tabs": "^7.3.10",
     "@react-navigation/elements": "^2.3.8",
     "@react-navigation/native": "^7.1.6",

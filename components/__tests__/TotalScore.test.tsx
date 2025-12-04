@@ -1,4 +1,4 @@
-import { colors } from '@/constants/colors';
+import variables from '@kinsa/cribbage-board-app-tokens';
 import { render, screen } from '@testing-library/react-native';
 import TotalScore from '../TotalScore';
 
@@ -15,11 +15,11 @@ describe('TotalScore Component', () => {
   });
 
   test.each([
-    { player: 1, points: 5, expectedColor: { color: colors.player.one } },
-    { player: 2, points: 42, expectedColor: { color: colors.player.two } },
+    { player: 1, points: 5, expectedColor: { color: variables.light.text.player1.highContrast } },
+    { player: 2, points: 42, expectedColor: { color: variables.light.text.player2.highContrast } },
   ])('player $player is styled correctly', ({ player, points, expectedColor }) => {
     const { getByTestId } = render(<TotalScore player={player} points={points} />);
-    const element = getByTestId(`total-score-${player}`);
+    const element = getByTestId(`total-score-${player}-text`);
     expect(element.props.style).toEqual(
       expect.arrayContaining([expect.objectContaining(expectedColor)])
     );

@@ -36,7 +36,7 @@ exports[`renders correctly for player 1 1`] = `
     [
       {
         "alignItems": "center",
-        "backgroundColor": "#FAF8F8",
+        "backgroundColor": "#f3f4f6",
         "borderRadius": 80,
         "height": 160,
         "justifyContent": "center",
@@ -47,12 +47,15 @@ exports[`renders correctly for player 1 1`] = `
       },
       {
         "alignSelf": "flex-start",
+        "backgroundColor": "#4c9d00",
         "transform": [
           {
             "rotate": "180deg",
           },
         ],
       },
+      null,
+      null,
     ]
   }
   testID="add-button-1"
@@ -61,12 +64,13 @@ exports[`renders correctly for player 1 1`] = `
     style={
       [
         {
-          "fontSize": 48,
-          "fontWeight": "bold",
+          "fontSize": 72,
+          "marginRight": -2,
+          "marginTop": -10,
           "textAlign": "center",
         },
         {
-          "color": "#4C9D00",
+          "color": "#faf8f8",
         },
       ]
     }
@@ -112,7 +116,7 @@ exports[`renders correctly for player 2 1`] = `
     [
       {
         "alignItems": "center",
-        "backgroundColor": "#FAF8F8",
+        "backgroundColor": "#f3f4f6",
         "borderRadius": 80,
         "height": 160,
         "justifyContent": "center",
@@ -123,7 +127,10 @@ exports[`renders correctly for player 2 1`] = `
       },
       {
         "alignSelf": "flex-end",
+        "backgroundColor": "#0073e6",
       },
+      null,
+      null,
     ]
   }
   testID="add-button-2"
@@ -132,12 +139,13 @@ exports[`renders correctly for player 2 1`] = `
     style={
       [
         {
-          "fontSize": 48,
-          "fontWeight": "bold",
+          "fontSize": 72,
+          "marginRight": -2,
+          "marginTop": -10,
           "textAlign": "center",
         },
         {
-          "color": "#0073E6",
+          "color": "#faf8f8",
         },
       ]
     }

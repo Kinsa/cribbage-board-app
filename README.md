@@ -59,25 +59,25 @@ npm test -- -u --watch
 
 ## Design
 
-[View the Figma file](https://www.figma.com/design/VzH7RgiOq6Q2B3O73NJe36/Cribbage-Board?node-id=19-57&m=dev)
-
-The Figma file is publicly viewable.
+[View the Figma file](https://www.figma.com/design/VzH7RgiOq6Q2B3O73NJe36/Cribbage-Board?node-id=19-57&m=dev). 
 
 ### Variables
 
+Variables are manually kept in sync with the [Design Tokens repo](https://github.com/Kinsa/cribbage-board-app-tokens).
+
 - **Variable Collections**: 
-    - **Primitives**: Primitive tokens which form the basis for the semantic tokens
-    - **Tokens**: Semantic tokens - currently only comprising the color palette
-    - **Game Interactions**: Variables used in the Game Interaction Prototype
+    - **Primitives**: Primitive tokens which form the basis for the semantic tokens. These should never be used directly in a component.
+    - **Tokens**: Semantic tokens. Currently only comprising the color palette.
+    - **Game Interactions**: Variables used in the Game Interaction Prototype. These are not part of the Design Tokens repo.
 
 ### Pages
 
-- **Components**: Reusable components with variants available in Figma library
-- **App Icon**: Light and dark versions of the application icon
-- **High Fidelity Comps**: contain developer annotations (requires a paid seat to access)
+- **Components**: Reusable components with variants available in Figma library.
+- **App Icon**: Light and dark versions of the application icon.
+- **High Fidelity Comps**: contain developer annotations (requires a paid seat to access).
     - **Cribbage Board**: The main app screen where game play happens. Design is split around the center axis so half of the screen is upright for each player. 
     - **Winner**: Winner announcement page. Indicates a win, skunk, or double skunk and by which player.
-- **Game Interactions Prototype**: Prototypes the Add, Clear, and Undo button interactions relative to the Current Points Value and Total Points Value
+- **Game Interactions Prototype**: Prototypes the Add, Clear, and Undo button interactions relative to the Current Points Value and Total Points Value.
 
 ## Implementation Status
 
@@ -89,7 +89,6 @@ The Figma file is publicly viewable.
     - [ ] EXPLORE: does the Win screen need a new game button?
 - [x] React Native Proof of Concept SVG Animation; tap to add, tap and hold to add 5, adding clears other player's Current Points Value
 - [ ] Update this project to use the [tokens project](https://github.com/Kinsa/cribbage-board-app-tokens) (possibly moving away from Tailwind) and fixing application of styles in so-doing
-    - [ ] Publish the tokens project to NPM
     - [ ] Document back-porting changes from the tokens project into Figma
 - [ ] Implement [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/simple-component/) for existing components and use for addition of any further components, updating the documentation here
 - [ ] Develop the Icon
@@ -107,7 +106,6 @@ The Figma file is publicly viewable.
 
 - React Native 0.79.6 with Expo
 - TypeScript
-- NativeWind (Tailwind CSS for React Native)
 - Expo Router for navigation
 - SVG graphics with react-native-svg
 - [React Native Testing Library](https://callstack.github.io/react-native-testing-library/index) for testing
@@ -120,4 +118,4 @@ This project is licensed under the Apache License 2.0. By contributing, you agre
 
 Copyright 2025 Kinsa Creative Incorporated
 
-Licensed under the Apache License, Version 2.0
+Licensed under the [Apache License, Version 2.0](LICENSE).

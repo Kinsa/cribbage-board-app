@@ -1,14 +1,22 @@
-import { colors } from '@/constants/colors';
+import variables from '@kinsa/cribbage-board-app-tokens';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import AddButton from '../AddButton';
 
 describe('AddButton Component', () => {
   test.each([
-    { player: 1, expectedColor: { color: colors.player.one } },
-    { player: 2, expectedColor: { color: colors.player.two } },
+    {
+      player: 1,
+      expectedBackgroundColor: { backgroundColor: variables.light.button.player1.background },
+      expectedTextColor: { color: variables.light.button.player1.text },
+    },
+    {
+      player: 2,
+      expectedBackgroundColor: { backgroundColor: variables.light.button.player2.background },
+      expectedTextColor: { color: variables.light.button.player2.text },
+    },
   ])(
     'player $player contains addition symbol with correct styling',
-    ({ player, expectedColor }) => {
+    ({ player, expectedBackgroundColor, expectedTextColor }) => {
       const mockPress = jest.fn();
       const mockLongPress = jest.fn();
 
@@ -19,11 +27,16 @@ describe('AddButton Component', () => {
       // Check button exists
       const button = screen.getByRole('button');
       expect(button).toBeOnTheScreen();
+      expect(button.props.style).toEqual(
+        expect.arrayContaining([expect.objectContaining(expectedBackgroundColor)])
+      );
 
       // Check the text inside the button
       const plusText = screen.getByText('+');
       expect(plusText).toBeOnTheScreen();
-      expect(plusText.props.style).toEqual(expect.arrayContaining([expectedColor]));
+      expect(plusText.props.style).toEqual(
+        expect.arrayContaining([expect.objectContaining(expectedTextColor)])
+      );
 
       // Check the press interaction
       fireEvent.press(button);
