@@ -48,32 +48,32 @@ npm run lint
 mise run format
 
 # Update all snapshots
-npm test -- -u
+mise run test -- -u
 
 # Update snapshots for specific file
-npm test TurnScore.test.tsx -- -u
+mise run test TurnScore.test.tsx -- -u
 
 # Update snapshots interactively (review each one)
-npm test -- -u --watch
+mise run test -- -u --watch
 
 # Run Storybook
-npm run storybook
+mise run storybook
 ```
 
 ## Design
 
 [View the Figma file](https://www.figma.com/design/VzH7RgiOq6Q2B3O73NJe36/Cribbage-Board?node-id=19-57&m=dev). 
 
-### Variables
+### Figma Variables
 
-Variables are manually kept in sync with the [Design Tokens repo](https://github.com/Kinsa/cribbage-board-app-tokens).
+Figma variables are manually kept in sync with the [Design Tokens repo](https://github.com/Kinsa/cribbage-board-app-tokens).
 
 - **Variable Collections**: 
     - **Primitives**: Primitive tokens which form the basis for the semantic tokens. These should never be used directly in a component.
     - **Tokens**: Semantic tokens. Currently only comprising the color palette.
     - **Game Interactions**: Variables used in the Game Interaction Prototype. These are not part of the Design Tokens repo.
 
-### Pages
+### Figma Pages
 
 - **Components**: Reusable components with variants available in Figma library.
 - **App Icon**: Light and dark versions of the application icon.
@@ -91,7 +91,7 @@ Variables are manually kept in sync with the [Design Tokens repo](https://github
     - [ ] If Player 1 presses the Add button, it should have the same effect as if Player 2 pressed the Clear button on their Current Points Value (can try using Figma Make to do this)
     - [ ] EXPLORE: does the Win screen need a new game button?
 - [x] React Native Proof of Concept SVG Animation; tap to add, tap and hold to add 5, adding clears other player's Current Points Value
-- [ ] Update this project to use the [tokens project](https://github.com/Kinsa/cribbage-board-app-tokens) (possibly moving away from Tailwind) and fixing application of styles in so-doing
+- [-] Update this project to use the [tokens project](https://github.com/Kinsa/cribbage-board-app-tokens) (possibly moving away from Tailwind) and fixing application of styles in so-doing
     - [ ] Document back-porting changes from the tokens project into Figma
 - [x] Implement [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/simple-component/) for existing components and use for addition of any further components, updating the documentation here
 - [ ] Develop the Icon
