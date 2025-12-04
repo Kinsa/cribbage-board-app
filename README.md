@@ -93,7 +93,11 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 - [x] React Native Proof of Concept SVG Animation; tap to add, tap and hold to add 5, adding clears other player's Current Points Value
 - [-] Update this project to use the [tokens project](https://github.com/Kinsa/cribbage-board-app-tokens) (possibly moving away from Tailwind) and fixing application of styles in so-doing
     - [ ] Document back-porting changes from the tokens project into Figma
-- [x] Implement [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/simple-component/) for existing components and use for addition of any further components, updating the documentation here
+- [-] Implement [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/simple-component/) for existing components and use for addition of any further components, updating the documentation here
+    - [x] Add Button
+    - [ ] Current points value
+    - [ ] Total points value
+        - [ ] Implement Skunk Indicator variants
 - [ ] Develop the Icon
 - [ ] Develop the Clear and Undo buttons
 - [ ] Develop the Win screen variations
