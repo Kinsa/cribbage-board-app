@@ -89,7 +89,6 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 - [x] State Variations
 - [-] Interactive Prototype
     - [ ] If Player 1 presses the Add button, it should have the same effect as if Player 2 pressed the Clear button on their Current Points Value (can try using Figma Make to do this)
-    - [ ] EXPLORE: does the Win screen need a new game button?
 - [x] React Native Proof of Concept SVG Animation; tap to add, tap and hold to add 5, adding clears other player's Current Points Value
 - [-] Update this project to use the [tokens project](https://github.com/Kinsa/cribbage-board-app-tokens) (possibly moving away from Tailwind) and fixing application of styles in so-doing
     - [ ] Document back-porting changes from the tokens project into Figma
@@ -106,6 +105,7 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 ### Phase 2
 
 - [ ] Develop night mode
+- [ ] EXPLORE: does the Win screen need a new game button?
 - [ ] EXPLORE: On the win screen, should the tail wag?
 - [ ] EXPLORE: On the win screen, if it is a skunk or double skunk should their be a poot cloud or double poot cloud behind the tail?
 
