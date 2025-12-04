@@ -49,3 +49,7 @@ description = "Fix code quality issues and format with prettier"
 [tasks.prettier]
 run = "npm run format"
 description = "Format code with prettier"
+
+[tasks.storybook]
+run = "npm run storybook"
+description = "Start Storybook development server"
