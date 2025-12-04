@@ -68,10 +68,11 @@ mise run storybook
 
 Figma variables are manually kept in sync with the [Design Tokens repo](https://github.com/Kinsa/cribbage-board-app-tokens).
 
-- **Variable Collections**: 
-    - **Primitives**: Primitive tokens which form the basis for the semantic tokens. These should never be used directly in a component.
-    - **Tokens**: Semantic tokens. Currently only comprising the color palette.
-    - **Game Interactions**: Variables used in the Game Interaction Prototype. These are not part of the Design Tokens repo.
+#### Variable Collections
+
+- **Primitives**: Primitive tokens which form the basis for the semantic tokens. These should never be used directly in a component.
+- **Tokens**: Semantic tokens. Currently only comprising the color palette.
+- **Game Interactions**: Variables used in the Game Interaction Prototype. These are not part of the Design Tokens repo.
 
 ### Figma Pages
 
