@@ -1,9 +1,14 @@
-// https://docs.expo.dev/guides/using-eslint/
-const { defineConfig } = require('eslint/config');
-const expoConfig = require('eslint-config-expo/flat');
-const tailwind = require('eslint-plugin-tailwindcss');
+// For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 
-module.exports = defineConfig([
+// https://docs.expo.dev/guides/using-eslint/
+import { defineConfig } from 'eslint/config';
+import expoConfig from 'eslint-config-expo/flat.js';
+import tailwind from 'eslint-plugin-tailwindcss';
+import prettier from 'eslint-plugin-prettier';
+import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import eslintConfigPrettier from 'eslint-config-prettier';
+
+export default defineConfig([
   expoConfig,
   {
     ignores: ['dist/*', 'coverage/*'],
@@ -27,8 +32,8 @@ module.exports = defineConfig([
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
     plugins: {
-      prettier: require('eslint-plugin-prettier'),
-      '@typescript-eslint': require('@typescript-eslint/eslint-plugin'),
+      prettier: prettier,
+      '@typescript-eslint': typescriptEslint,
       tailwindcss: tailwind,
     },
     rules: {
@@ -57,5 +62,5 @@ module.exports = defineConfig([
     },
   },
   // This should come last to disable conflicting rules
-  require('eslint-config-prettier'),
+  eslintConfigPrettier,
 ]);

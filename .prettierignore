@@ -8,6 +8,7 @@ node_modules
 .cache
 dist
 build
+ios
 
 # Ignore README file to allow custom formatting
 README.md

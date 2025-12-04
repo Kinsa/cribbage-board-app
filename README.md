@@ -55,6 +55,9 @@ npm test TurnScore.test.tsx -- -u
 
 # Update snapshots interactively (review each one)
 npm test -- -u --watch
+
+# Run Storybook
+npm run storybook
 ```
 
 ## Design
@@ -90,7 +93,7 @@ Variables are manually kept in sync with the [Design Tokens repo](https://github
 - [x] React Native Proof of Concept SVG Animation; tap to add, tap and hold to add 5, adding clears other player's Current Points Value
 - [ ] Update this project to use the [tokens project](https://github.com/Kinsa/cribbage-board-app-tokens) (possibly moving away from Tailwind) and fixing application of styles in so-doing
     - [ ] Document back-porting changes from the tokens project into Figma
-- [ ] Implement [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/simple-component/) for existing components and use for addition of any further components, updating the documentation here
+- [x] Implement [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/simple-component/) for existing components and use for addition of any further components, updating the documentation here
 - [ ] Develop the Icon
 - [ ] Develop the Clear and Undo buttons
 - [ ] Develop the Win screen variations
@@ -109,10 +112,19 @@ Variables are manually kept in sync with the [Design Tokens repo](https://github
 - Expo Router for navigation
 - SVG graphics with react-native-svg
 - [React Native Testing Library](https://callstack.github.io/react-native-testing-library/index) for testing
+- [Storybook.js](https://storybook.js.org/) testing and documenting components
 
 ## Contributing
 
 This project is licensed under the Apache License 2.0. By contributing, you agree that your contributions will be licensed under the same license. See [LICENSE](LICENSE) for details.
+
+### Components
+
+Components may have unit tests and should have stories. 
+
+Stories live in `components/__stories__/` with one story file per component using the naming scheme `ComponentName.stories.tsx`. _This location is configured in `.storybook/main.ts`._
+
+Unit tests live in `components/__tests__/` with one test file per component using the naming scheme `ComponentName.test.tsx`.
 
 ## License
 

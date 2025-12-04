@@ -71,3 +71,6 @@ app-example
 .idea/**/dictionaries
 .idea/**/shelf
 .idea/httpRequests/
+
+*storybook.log
+storybook-static

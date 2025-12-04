@@ -59,8 +59,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 72,
     textAlign: 'center',
-    marginTop: -10,
-    marginRight: -2,
+    marginTop: -14,
   },
   textPlayer1: {
     color: variables.light.button.player1.text,
