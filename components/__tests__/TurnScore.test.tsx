@@ -3,7 +3,7 @@ import { render } from '@testing-library/react-native';
 import TurnScore from '../TurnScore';
 
 describe('TurnScore Component', () => {
-  test('renders points and maximum score', () => {
+  test('renders points', () => {
     const { getByTestId, getByText } = render(<TurnScore player={1} points={7} />);
 
     // Check component renders
