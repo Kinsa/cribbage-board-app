@@ -30,12 +30,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   viewPlayer1: {
-    left: 140,
+    right: 224,
     bottom: '75%',
     transform: [{ rotate: '180deg' }],
   },
   viewPlayer2: {
-    right: 140,
+    left: 224,
     top: '75%',
   },
   text: {
