@@ -6,7 +6,7 @@ exports[`renders correctly for player 1 with 5 points 1`] = `
     [
       {
         "fontSize": 48,
-        "fontWeight": "bold",
+        "fontWeight": 800,
         "position": "absolute",
       },
       {
@@ -21,7 +21,7 @@ exports[`renders correctly for player 1 with 5 points 1`] = `
       },
     ]
   }
-  testID="turn-points-value-1"
+  testID="current-points-value-1"
 >
   5
 </Text>
@@ -33,7 +33,7 @@ exports[`renders correctly for player 2 with 42 points 1`] = `
     [
       {
         "fontSize": 48,
-        "fontWeight": "bold",
+        "fontWeight": 800,
         "position": "absolute",
       },
       {
@@ -43,7 +43,7 @@ exports[`renders correctly for player 2 with 42 points 1`] = `
       },
     ]
   }
-  testID="turn-points-value-2"
+  testID="current-points-value-2"
 >
   42
 </Text>

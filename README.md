@@ -48,13 +48,13 @@ npm run lint
 mise run format
 
 # Update all snapshots
-mise run test -- -u
+npm test -- -u
 
 # Update snapshots for specific file
-mise run test TurnScore.test.tsx -- -u
+npm test TurnScore.test.tsx -- -u
 
 # Update snapshots interactively (review each one)
-mise run test -- -u --watch
+npm test -- -u --watch
 
 # Run Storybook
 mise run storybook
@@ -104,9 +104,9 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
                 },
             },
             ```
-    - [ ] Current points value
-    - [ ] Total points value
-        - [ ] Implement Skunk Indicator variants
+    - [x] Current points value
+    - [x] Total points value
+        - [x] Implement Skunk Indicator variants
     - [ ] Color tokens using https://storybook.js.org/addons/storybook-design-token
 - [ ] Develop the Icon
 - [ ] Develop the Clear and Undo buttons

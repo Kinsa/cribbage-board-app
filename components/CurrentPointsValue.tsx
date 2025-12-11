@@ -1,15 +1,15 @@
 import variables from '@kinsa/cribbage-board-app-tokens';
 import { StyleSheet, Text } from 'react-native';
 
-interface TurnPointsValueProps {
+interface CurrentPointsValueProps {
   player: number;
   points: number;
 }
 
-export default function TurnPointsValue({ player, points }: TurnPointsValueProps) {
+export default function CurrentPointsValue({ player, points }: CurrentPointsValueProps) {
   return (
     <Text
-      testID={`turn-points-value-${player}`}
+      testID={`current-points-value-${player}`}
       style={[styles.text, player === 1 ? styles.textPlayer1 : styles.textPlayer2]}>
       {points}
     </Text>
@@ -19,7 +19,7 @@ export default function TurnPointsValue({ player, points }: TurnPointsValueProps
 const styles = StyleSheet.create({
   text: {
     position: 'absolute',
-    fontWeight: 'bold',
+    fontWeight: 800,
     fontSize: 48,
   },
   textPlayer1: {

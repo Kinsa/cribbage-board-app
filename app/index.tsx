@@ -1,7 +1,7 @@
 import AddButton from '@/components/AddButton';
 import CribbageBoard from '@/components/CribbageBoard';
+import TurnScore from '@/components/CurrentPointsValue';
 import TotalScore from '@/components/TotalPointsValue';
-import TurnScore from '@/components/TurnPointsValue';
 import { useIOSShakeToUndo } from '@/utils';
 import { Stack } from 'expo-router';
 import { useState } from 'react';
@@ -116,9 +116,9 @@ export default function HomeScreen() {
           longPressFunction={() => addPointsToBoard({ player: 1, points: 5 })}
         />
         {lastPointsAddedForPlayer === 1 && <TurnScore player={1} points={player1TurnPoints} />}
-        <TotalScore player={1} points={player1Points} />
+        <TotalScore player={1} playersPoints={player1Points} otherPlayersPoints={player2Points} />
         <CribbageBoard player1Points={player1Points} player2Points={player2Points} width={30} />
-        <TotalScore player={2} points={player2Points} />
+        <TotalScore player={2} playersPoints={player2Points} otherPlayersPoints={player1Points} />
         {lastPointsAddedForPlayer === 2 && <TurnScore player={2} points={player2TurnPoints} />}
         <AddButton
           player={2}
