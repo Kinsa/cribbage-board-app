@@ -1,18 +1,18 @@
 import variables from '@kinsa/cribbage-board-app-tokens';
 import { StyleSheet, Text, View } from 'react-native';
 
-interface TotalScoreProps {
+interface TotalPointsValueProps {
   player: number;
   points: number;
 }
 
-export default function TotalScore({ player, points }: TotalScoreProps) {
+export default function TotalPointsValue({ player, points }: TotalPointsValueProps) {
   return (
     <View
-      testID={`total-score-${player}`}
+      testID={`total-points-value-${player}`}
       style={[styles.view, player === 1 ? styles.viewPlayer1 : styles.viewPlayer2]}>
       <Text
-        testID={`total-score-${player}-text`}
+        testID={`total-points-value-${player}-text`}
         style={[styles.text, player === 1 ? styles.textPlayer1 : styles.textPlayer2]}>
         {points}
       </Text>

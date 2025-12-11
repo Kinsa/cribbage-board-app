@@ -1,7 +1,7 @@
 import AddButton from '@/components/AddButton';
 import CribbageBoard from '@/components/CribbageBoard';
-import TotalScore from '@/components/TotalScore';
-import TurnScore from '@/components/TurnScore';
+import TotalScore from '@/components/TotalPointsValue';
+import TurnScore from '@/components/TurnPointsValue';
 import { useIOSShakeToUndo } from '@/utils';
 import { Stack } from 'expo-router';
 import { useState } from 'react';

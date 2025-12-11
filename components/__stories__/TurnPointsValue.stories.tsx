@@ -1,8 +1,8 @@
-import TurnScore from '../TurnScore';
+import TurnPointsValue from '../TurnPointsValue';
 
 export default {
-  title: 'Components/TurnScore',
-  component: TurnScore,
+  title: 'Components/TurnPointsValue',
+  component: TurnPointsValue,
 };
 
 export const Player1 = {

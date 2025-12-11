@@ -1,8 +1,8 @@
-import TotalScore from '../TotalScore';
+import TotalPointsValue from '../TotalPointsValue';
 
 export default {
-  title: 'Components/TotalScore',
-  component: TotalScore,
+  title: 'Components/TotalPointsValue',
+  component: TotalPointsValue,
 };
 
 export const Player1 = {

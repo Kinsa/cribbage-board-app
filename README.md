@@ -94,8 +94,8 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 - [-] Update this project to use the [tokens project](https://github.com/Kinsa/cribbage-board-app-tokens) (possibly moving away from Tailwind) and fixing application of styles in so-doing
     - [ ] Document back-porting changes from the tokens project into Figma
 - [-] Implement [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/simple-component/) for existing components and use for addition of any further components, updating the documentation here
-    - [-] Add Button
-        - [ ] Link back to Figma using the `design` parameter:
+    - [x] Add Button
+        - [x] Link back to Figma using the `design` parameter:
             ```javascript
             parameters: {
                 design: {
