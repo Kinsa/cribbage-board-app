@@ -6,7 +6,7 @@ import UIButton from '@/components/UIButton';
 import { useIOSShakeToUndo } from '@/utils';
 import { Stack } from 'expo-router';
 import { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View } from 'react-native';
 
 export default function HomeScreen() {
   const [player1Points, setPlayer1Points] = useState(0);
@@ -144,6 +144,25 @@ export default function HomeScreen() {
     }
   };
 
+  const handleTapToReset = () => {
+    Alert.alert(
+      'Reset',
+      'Reset and start a new game?',
+      [
+        {
+          text: 'Cancel',
+          style: 'cancel',
+        },
+        {
+          text: 'Reset',
+          onPress: () => resetGame(),
+          style: 'destructive', // iOS only - makes text red
+        },
+      ],
+      { cancelable: true } // Android only - allows dismissing by tapping outside
+    );
+  };
+
   const handleTapToClear = () => {
     setLastPointsAddedForPlayer(0);
   };
@@ -166,7 +185,7 @@ export default function HomeScreen() {
               variation="undo"
               player={1}
               pressFunction={handleTapToUndo.bind(null, 1)}
-              longPressFunction={resetGame}
+              longPressFunction={handleTapToReset}
             />
           </View>
         </View>
@@ -186,7 +205,7 @@ export default function HomeScreen() {
               variation="undo"
               player={2}
               pressFunction={handleTapToUndo.bind(null, 2)}
-              longPressFunction={resetGame}
+              longPressFunction={handleTapToReset}
             />
             <UIButton variation="clear" player={2} pressFunction={handleTapToClear} />
           </View>
