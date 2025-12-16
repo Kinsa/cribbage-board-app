@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "CribbageBoardApp",
-    "slug": "CribbageBoardApp",
-    "version": "1.0.0",
+    "name": "Cribbage Board",
+    "slug": "CribbageBoard",
+    "version": "5.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "cribbageboardapp",
@@ -10,7 +10,9 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.anonymous.CribbageBoardApp"
+      "bundleIdentifier": "com.Kinsa.Cribbage-Board",
+      "buildNumber": "1",
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {

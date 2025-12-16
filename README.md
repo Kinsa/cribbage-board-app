@@ -103,11 +103,11 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
                 },
             },
             ```
-    - [-] Current points value
-        - [ ] Functionality when pressed is MVP rather than as intended
-    - [-] Total points value
+    - [x] Current points value
+        - [x] Functionality when pressed is MVP rather than as intended
+    - [x] Total points value
         - [x] Implement Skunk Indicator variants
-        - [ ] Functionality when pressed is MVP rather than as intended
+        - [x] Functionality when pressed is MVP rather than as intended
     - [ ] Color tokens using https://storybook.js.org/addons/storybook-design-token
 - [x] Develop the Icon
 - [ ] Develop the Win screen variations
