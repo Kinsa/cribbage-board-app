@@ -15,6 +15,8 @@ export default function HomeScreen() {
   const [player2TurnPoints, setPlayer2TurnPoints] = useState(0);
   const [lastPointsAdded, setLastPointsAdded] = useState(0);
   const [lastPointsAddedForPlayer, setLastPointsAddedForPlayer] = useState(0);
+  const [player1PointsHistory, setPlayer1PointsHistory] = useState<number[]>([]);
+  const [player2PointsHistory, setPlayer2PointsHistory] = useState<number[]>([]);
 
   const checkIfWon = (player: number, newPoints: number) => {
     if (newPoints > 120) {
@@ -40,6 +42,8 @@ export default function HomeScreen() {
     setPlayer2Points(0);
     setLastPointsAdded(0);
     setLastPointsAddedForPlayer(0);
+    setPlayer1PointsHistory([]);
+    setPlayer2PointsHistory([]);
     console.log('Game reset');
   };
 
@@ -65,6 +69,7 @@ export default function HomeScreen() {
       setPlayer1Points(newPoints);
       setLastPointsAdded(points);
       setLastPointsAddedForPlayer(1);
+      setPlayer1PointsHistory([...player1PointsHistory, points]);
       console.log(`Player 1 points ${newPoints}`);
       checkIfWon(player, newPoints);
     }
@@ -83,6 +88,7 @@ export default function HomeScreen() {
       setPlayer2Points(newPoints);
       setLastPointsAdded(points);
       setLastPointsAddedForPlayer(2);
+      setPlayer2PointsHistory([...player2PointsHistory, points]);
       console.log(`Player 2 points ${newPoints}`);
       checkIfWon(player, newPoints);
     }
@@ -94,14 +100,52 @@ export default function HomeScreen() {
       setPlayer1Points(newPoints);
       setLastPointsAdded(newPoints);
       setLastPointsAddedForPlayer(0);
+      setPlayer1PointsHistory(player1PointsHistory.slice(0, -1));
       console.log(`Player 1 points ${newPoints}`);
     } else if (lastPointsAddedForPlayer === 2) {
       const newPoints = player2Points - lastPointsAdded;
       setPlayer2Points(newPoints);
       setLastPointsAdded(newPoints);
       setLastPointsAddedForPlayer(0);
+      setPlayer2PointsHistory(player2PointsHistory.slice(0, -1));
       console.log(`Player 2 points ${newPoints}`);
     }
+  };
+
+  const handleTapToUndo = player => {
+    if (player === 1) {
+      if (player1Points === 0 || player1PointsHistory.length === 0) {
+        return;
+      }
+      const pointsToRemove = player1PointsHistory[player1PointsHistory.length - 1];
+      const newPoints = player1Points - pointsToRemove;
+      setPlayer1Points(newPoints);
+      setPlayer1PointsHistory(player1PointsHistory.slice(0, -1));
+      if (player1TurnPoints >= pointsToRemove) {
+        setPlayer1TurnPoints(player1TurnPoints - pointsToRemove);
+      } else {
+        setPlayer1TurnPoints(0);
+      }
+      console.log(`Player 1 points ${newPoints}`);
+    } else if (player === 2) {
+      if (player2Points === 0 || player2PointsHistory.length === 0) {
+        return;
+      }
+      const pointsToRemove = player2PointsHistory[player2PointsHistory.length - 1];
+      const newPoints = player2Points - pointsToRemove;
+      setPlayer2Points(newPoints);
+      setPlayer2PointsHistory(player2PointsHistory.slice(0, -1));
+      if (player2TurnPoints >= pointsToRemove) {
+        setPlayer2TurnPoints(player2TurnPoints - pointsToRemove);
+      } else {
+        setPlayer2TurnPoints(0);
+      }
+      console.log(`Player 2 points ${newPoints}`);
+    }
+  };
+
+  const handleTapToClear = () => {
+    setLastPointsAddedForPlayer(0);
   };
 
   useIOSShakeToUndo(handleShakeToUndo);
@@ -117,11 +161,11 @@ export default function HomeScreen() {
             longPressFunction={() => addPointsToBoard({ player: 1, points: 5 })}
           />
           <View style={[styles.uiButtonRow, styles.uiButtonRowPlayer1]}>
-            <UIButton variation="clear" player={1} pressFunction={resetGame} />
+            <UIButton variation="clear" player={1} pressFunction={handleTapToClear} />
             <UIButton
               variation="undo"
               player={1}
-              pressFunction={handleShakeToUndo}
+              pressFunction={handleTapToUndo.bind(null, 1)}
               longPressFunction={resetGame}
             />
           </View>
@@ -141,10 +185,10 @@ export default function HomeScreen() {
             <UIButton
               variation="undo"
               player={2}
-              pressFunction={handleShakeToUndo}
+              pressFunction={handleTapToUndo.bind(null, 2)}
               longPressFunction={resetGame}
             />
-            <UIButton variation="clear" player={2} pressFunction={resetGame} />
+            <UIButton variation="clear" player={2} pressFunction={handleTapToClear} />
           </View>
         </View>
       </View>
