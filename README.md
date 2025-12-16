@@ -66,7 +66,7 @@ mise run storybook
 
 ### Figma Variables
 
-Figma variables are manually kept in sync with the [Design Tokens repo](https://github.com/Kinsa/cribbage-board-app-tokens).
+Figma variables are manually kept in sync with the [Design Tokens repo](https://github.com/Kinsa/cribbage-board-app-tokens) via the [Figma Token Sync plugin](https://github.com/Kinsa/cribbage-board-app-token-sync-plugin).
 
 #### Variable Collections
 
@@ -91,8 +91,7 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 - [-] Interactive Prototype
     - [ ] If Player 1 presses the Add button, it should have the same effect as if Player 2 pressed the Clear button on their Current Points Value (can try using Figma Make to do this)
 - [x] React Native Proof of Concept SVG Animation; tap to add, tap and hold to add 5, adding clears other player's Current Points Value
-- [-] Update this project to use the [tokens project](https://github.com/Kinsa/cribbage-board-app-tokens) (possibly moving away from Tailwind) and fixing application of styles in so-doing
-    - [ ] Document back-porting changes from the tokens project into Figma
+- [x] Update this project to use the [tokens project](https://github.com/Kinsa/cribbage-board-app-tokens) (possibly moving away from Tailwind) and fixing application of styles in so-doing
 - [-] Implement [Storybook](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/simple-component/) for existing components and use for addition of any further components, updating the documentation here
     - [x] Add Button
         - [x] Link back to Figma using the `design` parameter:
@@ -104,12 +103,13 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
                 },
             },
             ```
-    - [x] Current points value
-    - [x] Total points value
+    - [-] Current points value
+        - [ ] Functionality when pressed is MVP rather than as intended
+    - [-] Total points value
         - [x] Implement Skunk Indicator variants
+        - [ ] Functionality when pressed is MVP rather than as intended
     - [ ] Color tokens using https://storybook.js.org/addons/storybook-design-token
-- [ ] Develop the Icon
-- [ ] Develop the Clear and Undo buttons
+- [x] Develop the Icon
 - [ ] Develop the Win screen variations
 - [ ] Develop new game dialog using an [alert](https://reactnative.dev/docs/alert)
 
