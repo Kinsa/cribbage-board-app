@@ -3,48 +3,50 @@ import CribbageBoard from '@/components/CribbageBoard';
 import TurnScore from '@/components/CurrentPointsValue';
 import TotalScore from '@/components/TotalPointsValue';
 import UIButton from '@/components/UIButton';
+import { useGameState } from '@/contexts/GameContext';
 import { useIOSShakeToUndo } from '@/utils';
-import { Stack } from 'expo-router';
-import { useState } from 'react';
+import { Stack, useRouter } from 'expo-router';
+import React from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
 
 export default function HomeScreen() {
-  const [player1Points, setPlayer1Points] = useState(0);
-  const [player2Points, setPlayer2Points] = useState(0);
-  const [player1TurnPoints, setPlayer1TurnPoints] = useState(0);
-  const [player2TurnPoints, setPlayer2TurnPoints] = useState(0);
-  const [lastPointsAdded, setLastPointsAdded] = useState(0);
-  const [lastPointsAddedForPlayer, setLastPointsAddedForPlayer] = useState(0);
-  const [player1PointsHistory, setPlayer1PointsHistory] = useState<number[]>([]);
-  const [player2PointsHistory, setPlayer2PointsHistory] = useState<number[]>([]);
+  const router = useRouter();
+
+  const {
+    player1Points,
+    player2Points,
+    lastPointsAdded,
+    lastPointsAddedForPlayer,
+    player1PointsHistory,
+    player2PointsHistory,
+    player1TurnPoints,
+    player2TurnPoints,
+    setPlayer1Points,
+    setPlayer2Points,
+    setLastPointsAdded,
+    setLastPointsAddedForPlayer,
+    setPlayer1PointsHistory,
+    setPlayer2PointsHistory,
+    setPlayer1TurnPoints,
+    setPlayer2TurnPoints,
+    resetGame,
+  } = useGameState();
 
   const checkIfWon = (player: number, newPoints: number) => {
     if (newPoints > 120) {
       const otherPlayerPoints = player === 1 ? player2Points : player1Points;
-      const winner = player === 1 ? 'Green' : 'Blue';
 
       if (otherPlayerPoints <= 60) {
-        console.log('Double skunk!');
+        router.push({
+          pathname: '/winner',
+          params: { winLanguage: 'Double skunk', player: player },
+        });
       } else if (otherPlayerPoints <= 90) {
-        console.log('Skunk!');
+        router.push({ pathname: '/winner', params: { winLanguage: 'Skunk', player: player } });
       } else {
-        console.log(`Player ${winner} won!`);
+        router.push({ pathname: '/winner', params: { winLanguage: 'Win', player: player } });
       }
-
-      setTimeout(() => {
-        resetGame();
-      }, 5000);
     }
-  };
-
-  const resetGame = () => {
-    setPlayer1Points(0);
-    setPlayer2Points(0);
-    setLastPointsAdded(0);
-    setLastPointsAddedForPlayer(0);
-    setPlayer1PointsHistory([]);
-    setPlayer2PointsHistory([]);
-    console.log('Game reset');
   };
 
   interface AddPointsToBoardProps {
@@ -156,10 +158,10 @@ export default function HomeScreen() {
         {
           text: 'Reset',
           onPress: () => resetGame(),
-          style: 'destructive', // iOS only - makes text red
+          style: 'destructive',
         },
       ],
-      { cancelable: true } // Android only - allows dismissing by tapping outside
+      { cancelable: true }
     );
   };
 

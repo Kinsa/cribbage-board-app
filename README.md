@@ -110,7 +110,9 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
         - [x] Functionality when pressed is MVP rather than as intended
     - [ ] Color tokens using https://storybook.js.org/addons/storybook-design-token
 - [x] Develop the Icon
-- [ ] Develop the Win screen variations
+- [-] Develop the Win screen variations
+  - [ ] Update tests to include Game Context, routing, and win screen player styling 
+  - [ ] Style the Win screen
 - [ ] Develop new game dialog using an [alert](https://reactnative.dev/docs/alert)
 
 ### Phase 2

@@ -1,5 +1,10 @@
 import { Stack } from 'expo-router';
+import { GameProvider } from '@/contexts/GameContext';
 
 export default function RootLayout() {
-  return <Stack />;
+  return (
+    <GameProvider>
+      <Stack />
+    </GameProvider>
+  );
 }

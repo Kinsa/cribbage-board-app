@@ -19,6 +19,12 @@ jest.mock('expo-haptics', () => ({
 
 // Mock Expo Router
 jest.mock('expo-router', () => ({
+  useRouter: () => ({
+    push: jest.fn(),
+    replace: jest.fn(),
+    back: jest.fn(),
+    canGoBack: jest.fn(() => false),
+  }),
   Stack: {
     Screen: ({ children }) => children,
   },

@@ -1,9 +1,13 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import HomeScreen from '../index';
+import { GameProvider } from '@/contexts/GameContext';
+
+// Wrapper component for tests
+const TestWrapper = ({ children }) => <GameProvider>{children}</GameProvider>;
 
 describe('HomeScreen Integration Tests', () => {
   beforeEach(() => {
-    render(<HomeScreen />);
+    render(<HomeScreen />, { wrapper: TestWrapper });
   });
 
   test('renders correctly', () => {
