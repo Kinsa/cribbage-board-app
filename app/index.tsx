@@ -112,7 +112,7 @@ export default function HomeScreen() {
     }
   };
 
-  const handleTapToUndo = player => {
+  const handleTapToUndo = (player: number) => {
     if (player === 1) {
       if (player1Points === 0 || player1PointsHistory.length === 0) {
         return;
