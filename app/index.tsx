@@ -40,15 +40,21 @@ export default function HomeScreen() {
       if (otherPlayerPoints <= GAME_CONFIG.DOUBLE_SKUNK_THRESHOLD) {
         router.push({
           pathname: '/winner',
-          params: { winLanguage: 'Double skunk', player: player },
+          params: { winLanguagePrefix: 'Double', winLanguageResult: 'Skunk', player: player },
         });
       } else if (
         otherPlayerPoints <=
         GAME_CONFIG.SKUNK_THRESHOLD + GAME_CONFIG.DOUBLE_SKUNK_THRESHOLD
       ) {
-        router.push({ pathname: '/winner', params: { winLanguage: 'Skunk', player: player } });
+        router.push({
+          pathname: '/winner',
+          params: { winLanguagePrefix: "That's a", winLanguageResult: 'Skunk', player: player },
+        });
       } else {
-        router.push({ pathname: '/winner', params: { winLanguage: 'Win', player: player } });
+        router.push({
+          pathname: '/winner',
+          params: { winLanguagePrefix: "That's a", winLanguageResult: 'Win', player: player },
+        });
       }
     }
   };
