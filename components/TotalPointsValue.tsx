@@ -1,6 +1,7 @@
 import variables from '@kinsa/cribbage-board-app-tokens';
 import { StyleSheet, Text, View } from 'react-native';
 import { SvgXml } from 'react-native-svg';
+import { GAME_CONFIG } from '@/constants/gameConfig';
 
 const SKUNK_SVG = `<svg width="11" height="14" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path fill-rule="evenodd" clip-rule="evenodd" d="M4.82624 9.03196C3.67511 9.92578 3.23111 10.7143 3.17729 11.2302C3.17729 11.2302 4.55577 9.81371 6.41698 9.20043C9.09331 8.31857 9.66399 7.35117 10.1405 5.74663C10.7265 3.26601 8.83288 1.33924 6.56286 0.976518C2.03828 0.253574 1.52445 3.92431 1.52445 3.92431C1.55436 3.91352 1.58362 3.90363 1.61286 3.89384C2.00214 3.05913 3.02844 1.4964 5.18477 1.75457C7.62321 2.04655 9.75583 5.20429 4.82624 9.03196Z" fill="currentColor"/>
@@ -60,13 +61,13 @@ function SkunkLevel({
   playerPoints: number;
   otherPlayerPoints: number;
 }) {
-  if (playerPoints - otherPlayerPoints >= 60) {
+  if (playerPoints - otherPlayerPoints >= GAME_CONFIG.DOUBLE_SKUNK_THRESHOLD) {
     return SkunkOrDoubleSkunkIcon({ player, skunkLevel: 2 });
-  } else if (playerPoints - otherPlayerPoints >= 30) {
+  } else if (playerPoints - otherPlayerPoints >= GAME_CONFIG.SKUNK_THRESHOLD) {
     return SkunkOrDoubleSkunkIcon({ player, skunkLevel: 1 });
-  } else if (otherPlayerPoints - playerPoints >= 60) {
+  } else if (otherPlayerPoints - playerPoints >= GAME_CONFIG.DOUBLE_SKUNK_THRESHOLD) {
     return SkunkOrDoubleSkunkIcon({ player: (player === 1 ? 2 : 1) as 1 | 2, skunkLevel: 2 });
-  } else if (otherPlayerPoints - playerPoints >= 30) {
+  } else if (otherPlayerPoints - playerPoints >= GAME_CONFIG.SKUNK_THRESHOLD) {
     return SkunkOrDoubleSkunkIcon({ player: (player === 1 ? 2 : 1) as 1 | 2, skunkLevel: 1 });
   } else {
     return null;

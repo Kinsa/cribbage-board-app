@@ -1,0 +1,5 @@
+export const GAME_CONFIG = {
+  WINNING_SCORE: 121,
+  SKUNK_THRESHOLD: 30,
+  DOUBLE_SKUNK_THRESHOLD: 60,
+} as const;

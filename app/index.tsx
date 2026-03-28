@@ -3,6 +3,7 @@ import CribbageBoard from '@/components/CribbageBoard';
 import TurnScore from '@/components/CurrentPointsValue';
 import TotalScore from '@/components/TotalPointsValue';
 import UIButton from '@/components/UIButton';
+import { GAME_CONFIG } from '@/constants/gameConfig';
 import { useGameState } from '@/contexts/GameContext';
 import { useIOSShakeToUndo } from '@/utils';
 import { Stack, useRouter } from 'expo-router';
@@ -33,15 +34,18 @@ export default function HomeScreen() {
   } = useGameState();
 
   const checkIfWon = (player: number, newPoints: number) => {
-    if (newPoints > 120) {
+    if (newPoints >= GAME_CONFIG.WINNING_SCORE) {
       const otherPlayerPoints = player === 1 ? player2Points : player1Points;
 
-      if (otherPlayerPoints <= 60) {
+      if (otherPlayerPoints <= GAME_CONFIG.DOUBLE_SKUNK_THRESHOLD) {
         router.push({
           pathname: '/winner',
           params: { winLanguage: 'Double skunk', player: player },
         });
-      } else if (otherPlayerPoints <= 90) {
+      } else if (
+        otherPlayerPoints <=
+        GAME_CONFIG.SKUNK_THRESHOLD + GAME_CONFIG.DOUBLE_SKUNK_THRESHOLD
+      ) {
         router.push({ pathname: '/winner', params: { winLanguage: 'Skunk', player: player } });
       } else {
         router.push({ pathname: '/winner', params: { winLanguage: 'Win', player: player } });
