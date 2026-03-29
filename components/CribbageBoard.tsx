@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
+    marginTop: 10,
   },
   boardContainer: {
     alignItems: 'center',
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
   },
   svg: {
     // Scale up for better visibility
-    transform: [{ scale: 3 }],
+    transform: [{ scale: 2.8 }],
   },
 });
 
