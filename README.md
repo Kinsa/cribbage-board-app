@@ -112,13 +112,13 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 - [x] Develop the Icon
 - [-] Develop the Win screen variations
   - [ ] Update tests to include Game Context, routing, and win screen player styling 
-  - [ ] Style the Win screen
+  - [x] Style the Win screen
 - [ ] Develop new game dialog using an [alert](https://reactnative.dev/docs/alert)
 
 ### Phase 2
 
 - [ ] Develop night mode
-- [ ] EXPLORE: does the Win screen need a new game button?
+- [x] EXPLORE: does the Win screen need a new game button?
 - [ ] EXPLORE: On the win screen, should the tail wag?
 - [ ] EXPLORE: On the win screen, if it is a skunk or double skunk should their be a poot cloud or double poot cloud behind the tail?
 

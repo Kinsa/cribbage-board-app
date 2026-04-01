@@ -1,4 +1,4 @@
-import variables from '@kinsa/cribbage-board-app-tokens/build/es/variables.mjs';
+import variables from '@kinsa/cribbage-board-app-tokens';
 import { useGameState } from '@/contexts/GameContext';
 import UIButton from '@/components/UIButton';
 import { Stack, useLocalSearchParams, useRouter } from 'expo-router';
