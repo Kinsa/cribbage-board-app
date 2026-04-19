@@ -113,7 +113,9 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 - [-] Develop the Win screen variations
   - [ ] Update tests to include Game Context, routing, and win screen player styling 
   - [x] Style the Win screen
-- [ ] Develop new game dialog using an [alert](https://reactnative.dev/docs/alert)
+- [ ] Update the UI button text style to match change in Figma (12pt font above button)
+- [ ] Update the Clear button to say "Reset Count"
+- [ ] Develop new game dialog using an [alert](https://reactnative.dev/docs/alert) when the Undo button is long pressed
 
 ### Phase 2
 
