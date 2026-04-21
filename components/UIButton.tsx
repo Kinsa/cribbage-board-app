@@ -29,7 +29,7 @@ export default function UIButton({
 }: ButtonProps) {
   const buttonAttributes = {
     undo: { label: 'Undo', icon: UNDO_ICON },
-    clear: { label: 'Clear', icon: CLEAR_ICON },
+    clear: { label: 'Reset Count', icon: CLEAR_ICON },
     newGame: { label: 'New', icon: NEW_GAME_ICON },
   };
 
@@ -53,6 +53,7 @@ export default function UIButton({
 
         return (
           <>
+            <Text>{buttonAttributes[variation].label}</Text>
             <View style={[styles.iconContainer, pressed && styles.iconContainerPressed]}>
               <SvgXml
                 xml={buttonAttributes[variation].icon}
@@ -62,7 +63,6 @@ export default function UIButton({
                 testID={`ui-button-${variation}-${player}-icon`}
               />
             </View>
-            <Text>{buttonAttributes[variation].label}</Text>
           </>
         );
       }}
