@@ -1,6 +1,11 @@
+import { ThemeProvider } from '@/contexts/ThemeContext';
 import variables from '@kinsa/cribbage-board-app-tokens';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import AddButton from '../AddButton';
+
+const ThemeWrapper = ({ children }: { children: React.ReactNode }) => (
+  <ThemeProvider>{children}</ThemeProvider>
+);
 
 describe('AddButton Component', () => {
   test.each([
@@ -21,7 +26,8 @@ describe('AddButton Component', () => {
       const mockLongPress = jest.fn();
 
       render(
-        <AddButton player={player} pressFunction={mockPress} longPressFunction={mockLongPress} />
+        <AddButton player={player} pressFunction={mockPress} longPressFunction={mockLongPress} />,
+        { wrapper: ThemeWrapper }
       );
 
       // Check button exists
@@ -52,7 +58,8 @@ describe('AddButton Component', () => {
 // snapshot tests
 test.each([1, 2])('renders correctly for player %i', player => {
   const tree = render(
-    <AddButton player={player} pressFunction={() => {}} longPressFunction={() => {}} />
+    <AddButton player={player} pressFunction={() => {}} longPressFunction={() => {}} />,
+    { wrapper: ThemeWrapper }
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

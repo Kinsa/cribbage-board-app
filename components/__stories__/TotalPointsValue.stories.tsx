@@ -1,8 +1,16 @@
+import { ThemeProvider } from '@/contexts/ThemeContext';
 import TotalPointsValue from '../TotalPointsValue';
+
+const ThemeDecorator = Story => (
+  <ThemeProvider>
+    <Story />
+  </ThemeProvider>
+);
 
 export default {
   title: 'Components/TotalPointsValue',
   component: TotalPointsValue,
+  decorators: [ThemeDecorator],
   parameters: {
     design: {
       type: 'figma',
@@ -14,13 +22,15 @@ export default {
 export const Player1 = {
   args: {
     player: 1,
-    points: 42,
+    playersPoints: 42,
+    otherPlayersPoints: 0,
   },
 };
 
 export const Player2 = {
   args: {
     player: 2,
-    points: 84,
+    playersPoints: 84,
+    otherPlayersPoints: 0,
   },
 };

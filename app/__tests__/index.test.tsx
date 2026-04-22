@@ -1,9 +1,14 @@
+import { GameProvider } from '@/contexts/GameContext';
+import { ThemeProvider } from '@/contexts/ThemeContext';
 import { fireEvent, render, screen } from '@testing-library/react-native';
 import HomeScreen from '../index';
-import { GameProvider } from '@/contexts/GameContext';
 
 // Wrapper component for tests
-const TestWrapper = ({ children }) => <GameProvider>{children}</GameProvider>;
+const TestWrapper = ({ children }) => (
+  <ThemeProvider>
+    <GameProvider>{children}</GameProvider>
+  </ThemeProvider>
+);
 
 describe('HomeScreen Integration Tests', () => {
   beforeEach(() => {

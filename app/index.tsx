@@ -5,12 +5,53 @@ import TotalScore from '@/components/TotalPointsValue';
 import UIButton from '@/components/UIButton';
 import { GAME_CONFIG } from '@/constants/gameConfig';
 import { useGameState } from '@/contexts/GameContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import { useIOSShakeToUndo } from '@/utils';
+import variables from '@kinsa/cribbage-board-app-tokens';
 import { Stack, useRouter } from 'expo-router';
 import React from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
 
+function createStyles(colorScheme: 'light' | 'dark') {
+  return StyleSheet.create({
+    view: {
+      backgroundColor: variables[colorScheme].surface.canvas,
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingBottom: 32,
+      paddingTop: 64,
+      paddingHorizontal: 16,
+      position: 'relative',
+    },
+    buttonRow: {
+      flex: 1,
+      gap: 8,
+      width: '100%',
+    },
+    buttonRowPlayer1: {
+      flexDirection: 'row',
+      alignItems: 'flex-start',
+    },
+    buttonRowPlayer2: {
+      flexDirection: 'row-reverse',
+      alignItems: 'flex-end',
+    },
+    uiButtonRow: {
+      flexDirection: 'row',
+      gap: 16,
+      padding: 8,
+    },
+    uiButtonRowPlayer1: {
+      transform: [{ rotate: '180deg' }],
+    },
+  });
+}
+
 export default function HomeScreen() {
+  const { colorScheme } = useTheme();
+  const styles = createStyles(colorScheme);
+
   const router = useRouter();
 
   const {
@@ -226,36 +267,3 @@ export default function HomeScreen() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: 32,
-    paddingTop: 64,
-    paddingHorizontal: 16,
-    position: 'relative',
-  },
-  buttonRow: {
-    flex: 1,
-    gap: 8,
-    width: '100%',
-  },
-  buttonRowPlayer1: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-  },
-  buttonRowPlayer2: {
-    flexDirection: 'row-reverse',
-    alignItems: 'flex-end',
-  },
-  uiButtonRow: {
-    flexDirection: 'row',
-    gap: 16,
-    padding: 8,
-  },
-  uiButtonRowPlayer1: {
-    transform: [{ rotate: '180deg' }],
-  },
-});

@@ -1,3 +1,4 @@
+import { useTheme } from '@/contexts/ThemeContext';
 import variables from '@kinsa/cribbage-board-app-tokens';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SvgXml } from 'react-native-svg';
@@ -14,11 +15,46 @@ const NEW_GAME_ICON = `<svg width="16" height="18" viewBox="0 0 16 18" xmlns="ht
 <path d="M8.81592 14.8872L8.12842 15.5747C7.81592 15.856 7.34717 15.856 7.06592 15.5747L0.972168 9.48098C0.690918 9.19973 0.690918 8.73098 0.972168 8.44973L7.06592 2.35598C7.34717 2.07473 7.81592 2.07473 8.12842 2.35598L8.81592 3.04348C9.09717 3.35598 9.09717 3.82473 8.78467 4.13723L5.03467 7.69973H14.0034C14.4409 7.69973 14.7534 8.04348 14.7534 8.44973V9.44973C14.7534 9.88723 14.4409 10.1997 14.0034 10.1997L5.03467 10.1997L8.81592 13.7935C9.09717 14.106 9.12842 14.5747 8.81592 14.8872Z" fill="currentColor"/>
 </svg>`;
 
+const BUTTON_ATTRIBUTES = {
+  undo: { label: 'Undo', icon: UNDO_ICON },
+  clear: { label: 'Reset Count', icon: CLEAR_ICON },
+  newGame: { label: 'New', icon: NEW_GAME_ICON },
+};
+
 interface ButtonProps {
   variation: 'undo' | 'clear' | 'newGame';
   pressFunction: () => void;
   longPressFunction?: () => void;
   player: 1 | 2;
+}
+
+function createStyles(colorScheme: 'light' | 'dark') {
+  return StyleSheet.create({
+    button: {
+      alignItems: 'center',
+      gap: 4,
+      flexDirection: 'column',
+      fontSize: 12,
+    },
+    label: {
+      color: variables[colorScheme].text.primary,
+      paddingBottom: 5,
+    },
+    iconContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: 10,
+      backgroundColor: variables[colorScheme].surface.invertedPrimary,
+      borderColor: variables[colorScheme].surface.primary,
+      borderRadius: '100%',
+      color: variables[colorScheme].text.primary,
+      borderWidth: 3,
+    },
+    iconContainerPressed: {
+      backgroundColor: variables[colorScheme].surface.primary,
+      color: variables[colorScheme].text.invertedPrimary,
+    },
+  });
 }
 
 export default function UIButton({
@@ -27,11 +63,9 @@ export default function UIButton({
   longPressFunction,
   player,
 }: ButtonProps) {
-  const buttonAttributes = {
-    undo: { label: 'Undo', icon: UNDO_ICON },
-    clear: { label: 'Reset Count', icon: CLEAR_ICON },
-    newGame: { label: 'New', icon: NEW_GAME_ICON },
-  };
+  const { colorScheme } = useTheme();
+  const styles = createStyles(colorScheme);
+  const buttonAttributes = BUTTON_ATTRIBUTES[variation];
 
   return (
     <Pressable
@@ -48,15 +82,15 @@ export default function UIButton({
       }}>
       {({ pressed }) => {
         const iconColor = pressed
-          ? variables.light.text.invertedPrimary
-          : variables.light.text.primary;
+          ? variables[colorScheme].text.invertedPrimary
+          : variables[colorScheme].text.primary;
 
         return (
           <>
-            <Text>{buttonAttributes[variation].label}</Text>
+            <Text style={styles.label}>{buttonAttributes.label}</Text>
             <View style={[styles.iconContainer, pressed && styles.iconContainerPressed]}>
               <SvgXml
-                xml={buttonAttributes[variation].icon}
+                xml={buttonAttributes.icon}
                 width={20}
                 height={20}
                 color={iconColor}
@@ -69,26 +103,3 @@ export default function UIButton({
     </Pressable>
   );
 }
-
-const styles = StyleSheet.create({
-  button: {
-    alignItems: 'center',
-    gap: 4,
-    flexDirection: 'column',
-    fontSize: 12,
-  },
-  iconContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 10,
-    backgroundColor: variables.light.surface.invertedPrimary,
-    borderColor: variables.light.surface.primary,
-    borderRadius: '100%',
-    color: variables.light.text.primary,
-    borderWidth: 3,
-  },
-  iconContainerPressed: {
-    backgroundColor: variables.light.surface.primary,
-    color: variables.light.text.invertedPrimary,
-  },
-});

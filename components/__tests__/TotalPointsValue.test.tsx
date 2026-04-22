@@ -1,11 +1,17 @@
+import { ThemeProvider } from '@/contexts/ThemeContext';
 import variables from '@kinsa/cribbage-board-app-tokens';
 import { render, screen } from '@testing-library/react-native';
 import TotalPointsValue from '../TotalPointsValue';
 
+const ThemeWrapper = ({ children }: { children: React.ReactNode }) => (
+  <ThemeProvider>{children}</ThemeProvider>
+);
+
 describe('TotalPointsValue Component', () => {
   test('renders points and maximum score', () => {
     const { getByTestId, getByText } = render(
-      <TotalPointsValue player={1} playersPoints={7} otherPlayersPoints={0} />
+      <TotalPointsValue player={1} playersPoints={7} otherPlayersPoints={0} />,
+      { wrapper: ThemeWrapper }
     );
 
     // Check component renders
@@ -36,7 +42,8 @@ describe('TotalPointsValue Component', () => {
           player={player}
           playersPoints={points}
           otherPlayersPoints={otherPlayersPoints}
-        />
+        />,
+        { wrapper: ThemeWrapper }
       );
       const element = getByTestId(`total-points-value-${player}-text`);
       expect(element.props.style).toEqual(
@@ -51,7 +58,8 @@ describe('TotalPointsValue Component', () => {
   describe('Skunk Icon Rendering', () => {
     test('does not render skunk icon when point difference is less than 30', () => {
       const { queryByTestId } = render(
-        <TotalPointsValue player={1} playersPoints={50} otherPlayersPoints={25} />
+        <TotalPointsValue player={1} playersPoints={50} otherPlayersPoints={25} />,
+        { wrapper: ThemeWrapper }
       );
 
       expect(queryByTestId('skunk-icon-player-1')).not.toBeOnTheScreen();
@@ -60,7 +68,8 @@ describe('TotalPointsValue Component', () => {
 
     test('does not render skunk icon when point difference is exactly 29', () => {
       const { queryByTestId } = render(
-        <TotalPointsValue player={1} playersPoints={50} otherPlayersPoints={21} />
+        <TotalPointsValue player={1} playersPoints={50} otherPlayersPoints={21} />,
+        { wrapper: ThemeWrapper }
       );
 
       expect(queryByTestId('skunk-icon-player-1')).not.toBeOnTheScreen();
@@ -69,7 +78,8 @@ describe('TotalPointsValue Component', () => {
 
     test('renders 1 skunk icon for player 1 when they are ahead by exactly 30 points', () => {
       const { queryAllByTestId } = render(
-        <TotalPointsValue player={1} playersPoints={50} otherPlayersPoints={20} />
+        <TotalPointsValue player={1} playersPoints={50} otherPlayersPoints={20} />,
+        { wrapper: ThemeWrapper }
       );
 
       const skunkIcons = queryAllByTestId('skunk-icon-player-1');
@@ -78,7 +88,8 @@ describe('TotalPointsValue Component', () => {
 
     test('renders 1 skunk icon for player 2 when they are ahead by 30-59 points', () => {
       const { queryAllByTestId } = render(
-        <TotalPointsValue player={2} playersPoints={80} otherPlayersPoints={40} />
+        <TotalPointsValue player={2} playersPoints={80} otherPlayersPoints={40} />,
+        { wrapper: ThemeWrapper }
       );
 
       const skunkIcons = queryAllByTestId('skunk-icon-player-2');
@@ -87,7 +98,8 @@ describe('TotalPointsValue Component', () => {
 
     test('renders 1 skunk icon for player 1 when they are ahead by 59 points', () => {
       const { queryAllByTestId } = render(
-        <TotalPointsValue player={1} playersPoints={100} otherPlayersPoints={41} />
+        <TotalPointsValue player={1} playersPoints={100} otherPlayersPoints={41} />,
+        { wrapper: ThemeWrapper }
       );
 
       const skunkIcons = queryAllByTestId('skunk-icon-player-1');
@@ -96,7 +108,8 @@ describe('TotalPointsValue Component', () => {
 
     test('renders 2 skunk icons for player 1 when they are ahead by exactly 60 points', () => {
       const { queryAllByTestId } = render(
-        <TotalPointsValue player={1} playersPoints={90} otherPlayersPoints={30} />
+        <TotalPointsValue player={1} playersPoints={90} otherPlayersPoints={30} />,
+        { wrapper: ThemeWrapper }
       );
 
       const skunkIcons = queryAllByTestId('skunk-icon-player-1');
@@ -105,7 +118,8 @@ describe('TotalPointsValue Component', () => {
 
     test('renders 2 skunk icons for player 2 when they are ahead by more than 60 points', () => {
       const { queryAllByTestId } = render(
-        <TotalPointsValue player={2} playersPoints={100} otherPlayersPoints={20} />
+        <TotalPointsValue player={2} playersPoints={100} otherPlayersPoints={20} />,
+        { wrapper: ThemeWrapper }
       );
 
       const skunkIcons = queryAllByTestId('skunk-icon-player-2');
@@ -114,7 +128,8 @@ describe('TotalPointsValue Component', () => {
 
     test('renders 1 skunk icon for player 2 when player 1 is behind by 30-59 points', () => {
       const { queryAllByTestId } = render(
-        <TotalPointsValue player={1} playersPoints={20} otherPlayersPoints={50} />
+        <TotalPointsValue player={1} playersPoints={20} otherPlayersPoints={50} />,
+        { wrapper: ThemeWrapper }
       );
 
       const skunkIcons = queryAllByTestId('skunk-icon-player-2');
@@ -123,7 +138,8 @@ describe('TotalPointsValue Component', () => {
 
     test('renders 2 skunk icons for player 1 when player 2 is behind by 60+ points', () => {
       const { queryAllByTestId } = render(
-        <TotalPointsValue player={2} playersPoints={30} otherPlayersPoints={100} />
+        <TotalPointsValue player={2} playersPoints={30} otherPlayersPoints={100} />,
+        { wrapper: ThemeWrapper }
       );
 
       const skunkIcons = queryAllByTestId('skunk-icon-player-1');
@@ -144,7 +160,8 @@ test.each([
         player={player}
         playersPoints={points}
         otherPlayersPoints={otherPlayersPoints}
-      />
+      />,
+      { wrapper: ThemeWrapper }
     ).toJSON();
     expect(tree).toMatchSnapshot();
   }

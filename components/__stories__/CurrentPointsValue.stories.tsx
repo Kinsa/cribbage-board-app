@@ -1,8 +1,16 @@
+import { ThemeProvider } from '@/contexts/ThemeContext';
 import CurrentPointsValue from '../CurrentPointsValue';
+
+const ThemeDecorator = Story => (
+  <ThemeProvider>
+    <Story />
+  </ThemeProvider>
+);
 
 export default {
   title: 'Components/CurrentPointsValue',
   component: CurrentPointsValue,
+  decorators: [ThemeDecorator],
   parameters: {
     design: {
       type: 'figma',

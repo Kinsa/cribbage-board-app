@@ -1,8 +1,16 @@
+import { ThemeProvider } from '@/contexts/ThemeContext';
 import UIButton from '../UIButton';
+
+const ThemeDecorator = Story => (
+  <ThemeProvider>
+    <Story />
+  </ThemeProvider>
+);
 
 export default {
   title: 'Components/UIButton',
   component: UIButton,
+  decorators: [ThemeDecorator],
   parameters: {
     design: {
       type: 'figma',

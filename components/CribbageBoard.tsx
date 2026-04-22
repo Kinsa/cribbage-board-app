@@ -1,3 +1,4 @@
+import { useTheme } from '@/contexts/ThemeContext';
 import variables from '@kinsa/cribbage-board-app-tokens';
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
@@ -9,7 +10,34 @@ interface CribbageBoardProps {
   width?: number;
 }
 
-const CribbageBoard = ({ player1Points, player2Points, width = 52 }: CribbageBoardProps) => {
+function createStyles() {
+  return StyleSheet.create({
+    container: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      flex: 1,
+      marginTop: 10,
+    },
+    boardContainer: {
+      alignItems: 'center',
+      marginBottom: 20,
+      transform: [{ rotate: '15deg' }],
+    },
+    svg: {
+      // Scale up for better visibility
+      transform: [{ scale: 2.8 }],
+    },
+  });
+}
+
+export default function CribbageBoard({
+  player1Points,
+  player2Points,
+  width = 52,
+}: CribbageBoardProps) {
+  const { colorScheme } = useTheme();
+  const styles = createStyles();
+
   const aspectRatio = 388 / 56; // height/width
   const height = width * aspectRatio;
 
@@ -80,13 +108,13 @@ const CribbageBoard = ({ player1Points, player2Points, width = 52 }: CribbageBoa
           {/* Background tracks (dark grey) */}
           <Path
             d={player1TrackPath}
-            stroke={variables.light.surface.boardTrack}
+            stroke={variables[colorScheme].surface.boardTrack}
             strokeWidth="1"
             fill="none"
           />
           <Path
             d={player2TrackPath}
-            stroke={variables.light.surface.boardTrack}
+            stroke={variables[colorScheme].surface.boardTrack}
             strokeWidth="1"
             fill="none"
           />
@@ -95,7 +123,7 @@ const CribbageBoard = ({ player1Points, player2Points, width = 52 }: CribbageBoa
           {player1Progress > 0 && (
             <Path
               d={player1TrackPath}
-              stroke={variables.light.surface.player1}
+              stroke={variables[colorScheme].surface.player1}
               strokeWidth="4"
               fill="none"
               strokeLinecap="round"
@@ -106,7 +134,7 @@ const CribbageBoard = ({ player1Points, player2Points, width = 52 }: CribbageBoa
           {player2Progress > 0 && (
             <Path
               d={player2TrackPath}
-              stroke={variables.light.surface.player2}
+              stroke={variables[colorScheme].surface.player2}
               strokeWidth="4"
               fill="none"
               strokeLinecap="round"
@@ -118,24 +146,4 @@ const CribbageBoard = ({ player1Points, player2Points, width = 52 }: CribbageBoa
       </View>
     </View>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    marginTop: 10,
-  },
-  boardContainer: {
-    alignItems: 'center',
-    marginBottom: 20,
-    transform: [{ rotate: '15deg' }],
-  },
-  svg: {
-    // Scale up for better visibility
-    transform: [{ scale: 2.8 }],
-  },
-});
-
-export default CribbageBoard;
+}

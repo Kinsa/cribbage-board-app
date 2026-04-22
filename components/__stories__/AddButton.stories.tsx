@@ -1,8 +1,16 @@
+import { ThemeProvider } from '@/contexts/ThemeContext';
 import AddButton from '../AddButton';
+
+const ThemeDecorator = Story => (
+  <ThemeProvider>
+    <Story />
+  </ThemeProvider>
+);
 
 export default {
   title: 'Components/AddButton',
   component: AddButton,
+  decorators: [ThemeDecorator],
   parameters: {
     design: {
       type: 'figma',
