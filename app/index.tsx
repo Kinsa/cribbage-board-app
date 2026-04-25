@@ -9,7 +9,6 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { useIOSShakeToUndo } from '@/utils';
 import variables from '@kinsa/cribbage-board-app-tokens';
 import { Stack, useRouter } from 'expo-router';
-import React from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
 
 function createStyles(colorScheme: 'light' | 'dark') {
@@ -20,8 +19,8 @@ function createStyles(colorScheme: 'light' | 'dark') {
       alignItems: 'center',
       justifyContent: 'center',
       paddingBottom: 32,
-      paddingTop: 64,
-      paddingHorizontal: 16,
+      paddingTop: 56,
+      paddingHorizontal: 8,
       position: 'relative',
     },
     buttonRow: {
@@ -106,16 +105,16 @@ export default function HomeScreen() {
   }
 
   const addPointsToBoard = ({ player, points }: AddPointsToBoardProps) => {
-    console.log(`Player ${player} added ${points} points`);
+    // console.log(`Player ${player} added ${points} points`);
 
     if (player === 1) {
       if (lastPointsAddedForPlayer === 1) {
         const newPoints = player1TurnPoints + points;
         setPlayer1TurnPoints(newPoints);
-        console.log(`Player 1 turn points ${newPoints}`);
+        // console.log(`Player 1 turn points ${newPoints}`);
       } else {
         setPlayer1TurnPoints(points);
-        console.log(`Player 1 turn points ${points}`);
+        // console.log(`Player 1 turn points ${points}`);
       }
 
       const newPoints = player1Points + points;
@@ -123,7 +122,7 @@ export default function HomeScreen() {
       setLastPointsAdded(points);
       setLastPointsAddedForPlayer(1);
       setPlayer1PointsHistory([...player1PointsHistory, points]);
-      console.log(`Player 1 points ${newPoints}`);
+      // console.log(`Player 1 points ${newPoints}`);
       checkIfWon(player, newPoints);
     }
 
@@ -131,10 +130,10 @@ export default function HomeScreen() {
       if (lastPointsAddedForPlayer === 2) {
         const newPoints = player2TurnPoints + points;
         setPlayer2TurnPoints(newPoints);
-        console.log(`Player 2 turn points ${newPoints}`);
+        // console.log(`Player 2 turn points ${newPoints}`);
       } else {
         setPlayer2TurnPoints(points);
-        console.log(`Player 2 turn points ${points}`);
+        // console.log(`Player 2 turn points ${points}`);
       }
 
       const newPoints = player2Points + points;
@@ -142,7 +141,7 @@ export default function HomeScreen() {
       setLastPointsAdded(points);
       setLastPointsAddedForPlayer(2);
       setPlayer2PointsHistory([...player2PointsHistory, points]);
-      console.log(`Player 2 points ${newPoints}`);
+      // console.log(`Player 2 points ${newPoints}`);
       checkIfWon(player, newPoints);
     }
   };
@@ -154,14 +153,14 @@ export default function HomeScreen() {
       setLastPointsAdded(newPoints);
       setLastPointsAddedForPlayer(0);
       setPlayer1PointsHistory(player1PointsHistory.slice(0, -1));
-      console.log(`Player 1 points ${newPoints}`);
+      // console.log(`Player 1 points ${newPoints}`);
     } else if (lastPointsAddedForPlayer === 2) {
       const newPoints = player2Points - lastPointsAdded;
       setPlayer2Points(newPoints);
       setLastPointsAdded(newPoints);
       setLastPointsAddedForPlayer(0);
       setPlayer2PointsHistory(player2PointsHistory.slice(0, -1));
-      console.log(`Player 2 points ${newPoints}`);
+      // console.log(`Player 2 points ${newPoints}`);
     }
   };
 
@@ -179,7 +178,7 @@ export default function HomeScreen() {
       } else {
         setPlayer1TurnPoints(0);
       }
-      console.log(`Player 1 points ${newPoints}`);
+      // console.log(`Player 1 points ${newPoints}`);
     } else if (player === 2) {
       if (player2Points === 0 || player2PointsHistory.length === 0) {
         return;
@@ -193,7 +192,7 @@ export default function HomeScreen() {
       } else {
         setPlayer2TurnPoints(0);
       }
-      console.log(`Player 2 points ${newPoints}`);
+      // console.log(`Player 2 points ${newPoints}`);
     }
   };
 

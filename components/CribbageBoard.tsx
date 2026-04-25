@@ -1,6 +1,5 @@
 import { useTheme } from '@/contexts/ThemeContext';
 import variables from '@kinsa/cribbage-board-app-tokens';
-import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
@@ -25,7 +24,7 @@ function createStyles() {
     },
     svg: {
       // Scale up for better visibility
-      transform: [{ scale: 2.8 }],
+      transform: [{ scale: 2.5 }],
     },
   });
 }
