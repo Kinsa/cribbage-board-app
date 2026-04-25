@@ -60,6 +60,16 @@ npm test -- -u --watch
 mise run storybook
 ```
 
+## Distribution
+
+```shell
+# Create a build using EAS
+npx eas-cli@latest build --platform ios
+
+# Submit the build using EAS
+npx eas-cli@latest submit --platform ios
+```
+
 ## Design
 
 [View the Figma file](https://www.figma.com/design/VzH7RgiOq6Q2B3O73NJe36/Cribbage-Board?node-id=19-57&m=dev). 

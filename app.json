@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Cribbage Board",
-    "slug": "CribbageBoard",
+    "name": "Cribbage Game Board",
+    "slug": "cribbage-game-board",
     "version": "5.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -11,16 +11,7 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.Kinsa.Cribbage-Board",
-      "buildNumber": "1",
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "edgeToEdgeEnabled": true,
-      "package": "com.anonymous.CribbageBoardApp"
+      "buildNumber": "1"
     },
     "web": {
       "bundler": "metro",
@@ -41,6 +32,16 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "b1cd2424-a0ad-439f-9f9f-412a5eb32979"
+      }
+    },
+    "owner": "kinsa-creative",
+    "android": {
+      "package": "com.Kinsa.CribbageBoard"
     }
   }
 }
