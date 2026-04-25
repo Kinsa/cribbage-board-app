@@ -116,8 +116,7 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 - [x] Update the UI button text style to match change in Figma (12pt font above button)
 - [x] Update the Clear button to say "Reset Count"
 - [x] Develop new game dialog using an [alert](https://reactnative.dev/docs/alert) when the Undo button is long pressed
-- [x] Develop night mode; use cmd + shfit + a to shift the simulator between light and dark mode
-- [ ] Add a dark icon - ios dark icon is controlled in expo - configure icon appearance in app config and provide separate assets for light/dark variants
+- [x] Develop night mode; use cmd + shift + a to shift the simulator between light and dark mode
 
 ### Phase 2
 
@@ -128,8 +127,8 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 ### Exploration
 
 - [x] Does the Win screen need a new game button?
-- [ ] On the win screen, should the tail wag?
-- [ ] On the win screen, if it is a skunk or double skunk should their be a poot cloud or double poot cloud behind the tail?
+- [ ] On the win screen, could the tail wag?
+- [ ] On the win screen, if it is a skunk or double skunk could their be a poot cloud or double poot cloud behind the tail?
 
 ## Tech Stack
 
