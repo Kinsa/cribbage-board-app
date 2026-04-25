@@ -127,8 +127,13 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 - [x] Update the Clear button to say "Reset Count"
 - [x] Develop new game dialog using an [alert](https://reactnative.dev/docs/alert) when the Undo button is long pressed
 - [x] Develop night mode; use cmd + shift + a to shift the simulator between light and dark mode
+- [ ] Update the image and the copyright on the marketing site at https://apps.kinsacreative.com
 
 ### Phase 2
+
+#### Better iPad support
+
+- [ ] Can the design be scaled to better fill the space for iPad?
 
 #### Android support
 
