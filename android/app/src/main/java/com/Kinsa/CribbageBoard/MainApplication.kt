@@ -1,4 +1,4 @@
-package com.anonymous.CribbageBoardApp
+package com.Kinsa.CribbageBoardApp
 
 import android.app.Application
 import android.content.res.Configuration

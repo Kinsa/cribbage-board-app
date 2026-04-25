@@ -1,4 +1,4 @@
-package com.anonymous.CribbageBoardApp
+package com.Kinsa.CribbageBoardApp
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

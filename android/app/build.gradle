@@ -87,13 +87,13 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.anonymous.CribbageBoardApp'
+    namespace 'com.Kinsa.CribbageBoard'
     defaultConfig {
-        applicationId 'com.anonymous.CribbageBoardApp'
+        applicationId 'com.Kinsa.CribbageBoard'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
-        versionName "1.0.0"
+        versionName "5.0.0"
     }
     signingConfigs {
         debug {
