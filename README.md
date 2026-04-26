@@ -128,22 +128,22 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 - [x] Develop new game dialog using an [alert](https://reactnative.dev/docs/alert) when the Undo button is long pressed
 - [x] Develop night mode; use cmd + shift + a to shift the simulator between light and dark mode
 - [ ] Update the image and the copyright on the marketing site at https://apps.kinsacreative.com
-- [ ] Address this warning: This app was built with the iOS 18.5 SDK. Starting April 28, 2026, all iOS and iPadOS apps must be built with the iOS 26 SDK or later, included in Xcode 26 or later, in order to be uploaded to App Store Connect or submitted for distribution.
+- [x] Address this warning: This app was built with the iOS 18.5 SDK. Starting April 28, 2026, all iOS and iPadOS apps must be built with the iOS 26 SDK or later, included in Xcode 26 or later, in order to be uploaded to App Store Connect or submitted for distribution.
     - [x] Update to Expo 54
-        - [ ] [Add a .icon file](https://expo.dev/changelog/sdk-54) built with Icon composer with proper light and dark versions
+- [ ] [Add a .icon file](https://expo.dev/changelog/sdk-54) built with Icon composer with proper light and dark versions
 
-        `app.json`:
+    `app.json`:
 
-        ```javascript
-        {
-            "ios": {
-                "icon": "./assets/app.icon"
-            }
+    ```javascript
+    {
+        "ios": {
+            "icon": "./assets/app.icon"
         }
-        ```
+    }
+    ```
 
-            - [Tutorial](https://developer.apple.com/videos/play/wwdc2025/361/)
-    - [ ] Update to [Expo 55](https://expo.dev/changelog/sdk-55)
+    - [Tutorial](https://developer.apple.com/videos/play/wwdc2025/361/)
+- [ ] Update to [Expo 55](https://expo.dev/changelog/sdk-55)
 
 ### Phase 2
 
