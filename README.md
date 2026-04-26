@@ -19,8 +19,8 @@ cd CribbageBoardApp
 # Install mise-managed tools
 mise install
 
-# Install dependencies
-npm install
+# Install dependencies from lock file
+npm ci
 
 # Start development server which prompts with options to run in emulators etc.
 mise run start
@@ -129,6 +129,21 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 - [x] Develop night mode; use cmd + shift + a to shift the simulator between light and dark mode
 - [ ] Update the image and the copyright on the marketing site at https://apps.kinsacreative.com
 - [ ] Address this warning: This app was built with the iOS 18.5 SDK. Starting April 28, 2026, all iOS and iPadOS apps must be built with the iOS 26 SDK or later, included in Xcode 26 or later, in order to be uploaded to App Store Connect or submitted for distribution.
+    - [x] Update to Expo 54
+        - [ ] [Add a .icon file](https://expo.dev/changelog/sdk-54) built with Icon composer with proper light and dark versions
+
+        `app.json`:
+
+        ```javascript
+        {
+            "ios": {
+                "icon": "./assets/app.icon"
+            }
+        }
+        ```
+
+            - [Tutorial](https://developer.apple.com/videos/play/wwdc2025/361/)
+    - [ ] Update to [Expo 55](https://expo.dev/changelog/sdk-55)
 
 ### Phase 2
 
@@ -148,12 +163,18 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 
 ## Tech Stack
 
-- React Native 0.79.6 with Expo
+- React Native with Expo
 - TypeScript
 - Expo Router for navigation
 - SVG graphics with react-native-svg
 - [React Native Testing Library](https://callstack.github.io/react-native-testing-library/index) for testing
 - [Storybook.js](https://storybook.js.org/) testing and documenting components
+
+## Deployment and Distribution
+
+- Download the distribution provisioning profile from App Store Connect.
+- Create a build and then upload it using the eas-cli commands. Reference the provisioning profile downloaded in step 1 when it asks.
+- Use iPhone 17 Pro Max as the simulator to take screenshots on and upload to the 6.9" display. Apple will resize to the required 6.5" display size.
 
 ## Contributing
 
@@ -169,6 +190,6 @@ Unit tests live in `components/__tests__/` with one test file per component usin
 
 ## License
 
-Copyright 2025 Kinsa Creative Incorporated
+Copyright 2026 Kinsa Creative Incorporated
 
 Licensed under the [Apache License, Version 2.0](LICENSE).
