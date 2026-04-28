@@ -15,12 +15,12 @@ run = "npx expo start"
 description = "Start Expo development server"
 
 [tasks.build-ios]
-run = "npx expo build:ios"
+run = "npx eas-cli@latest build --platform ios"
 description = "Build for iOS"
 
-[tasks.ios]
-run = "npx expo run:ios"
-description = "Run on iOS simulator"
+[tasks.distribute-ios]
+run = "npx eas-cli@latest submit --platform ios"
+description = "Build for iOS"
 
 [tasks.iphone]
 run = "npx expo run:ios --device"

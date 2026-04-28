@@ -64,10 +64,10 @@ mise run storybook
 
 ```shell
 # Create a build using EAS
-npx eas-cli@latest build --platform ios
+mise run build-ios
 
 # Submit the build using EAS
-npx eas-cli@latest submit --platform ios
+mise run distribute-ios
 ```
 
 ## Design
