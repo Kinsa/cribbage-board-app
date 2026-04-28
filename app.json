@@ -11,7 +11,8 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.Kinsa.Cribbage-Board",
-      "buildNumber": "1"
+      "buildNumber": "1",
+      "icon": "./assets/app.icon"
     },
     "web": {
       "bundler": "metro",

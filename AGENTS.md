@@ -1,6 +1,6 @@
-# CLAUDE.md
+# AGENTS.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides guidance to AI agents when working with code in this repository.
 
 ## Common Commands
 
@@ -43,8 +43,8 @@ This is a React Native application using Expo framework with the following key t
 
 ### Core Stack
 
-- **Expo Router** (v5) - File-based routing for navigation
-- **React Native** (0.79.6) with React 19
+- **Expo Router** - File-based routing for navigation
+- **React Native** - with React 19
 - **TypeScript** - Strict mode enabled
 
 ### Project Structure
