@@ -1,12 +1,11 @@
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 
 // https://docs.expo.dev/guides/using-eslint/
-import { defineConfig } from 'eslint/config';
-import expoConfig from 'eslint-config-expo/flat.js';
-import tailwind from 'eslint-plugin-tailwindcss';
-import prettier from 'eslint-plugin-prettier';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import expoConfig from 'eslint-config-expo/flat.js';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import prettier from 'eslint-plugin-prettier';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   expoConfig,
@@ -34,7 +33,6 @@ export default defineConfig([
     plugins: {
       prettier: prettier,
       '@typescript-eslint': typescriptEslint,
-      tailwindcss: tailwind,
     },
     rules: {
       // Prettier integration
