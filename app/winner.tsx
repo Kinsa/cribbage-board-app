@@ -19,6 +19,9 @@ function createStyles(colorScheme: 'light' | 'dark') {
       width: '100%',
       height: '100%',
     },
+    viewPlayer1: {
+      transform: [{ rotateX: '180deg' }, { rotateY: '180deg' }],
+    },
     pressable: {
       flex: 1,
       alignItems: 'flex-start',
@@ -77,7 +80,7 @@ export default function WinnerScreen() {
   return (
     <>
       <Stack.Screen options={{ headerShown: false }} />
-      <View style={styles.view}>
+      <View style={[styles.view, player === '1' ? styles.viewPlayer1 : null]}>
         <Pressable
           accessibilityRole="button"
           onPress={() => {
