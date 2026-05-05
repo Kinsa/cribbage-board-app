@@ -232,13 +232,13 @@ export default function HomeScreen() {
             longPressFunction={() => addPointsToBoard({ player: 1, points: 5 })}
           />
           <View style={[styles.uiButtonRow, styles.uiButtonRowPlayer1]}>
-            <UIButton variation="clear" player={1} pressFunction={handleTapToClear} />
             <UIButton
               variation="undo"
               player={1}
               pressFunction={handleTapToUndo.bind(null, 1)}
               longPressFunction={handleTapToReset}
             />
+            <UIButton variation="clear" player={1} pressFunction={handleTapToClear} />
           </View>
         </View>
         {lastPointsAddedForPlayer === 1 && <TurnScore player={1} points={player1TurnPoints} />}
