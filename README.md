@@ -157,6 +157,12 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 
 - [ ] Add Android support
 
+#### Win tracking
+
+- UI idea: dot in winning colour indicate a win, after a second win add a number indicating the total e.g. •2, tap the area to access an overview screen and reset the count. Retain in perpetuity (or until reset).
+    - Upsell: Save account, name account, name opponents and switch between them
+        - Colour picker
+
 ### Exploration
 
 - [x] Does the Win screen need a new game button?
