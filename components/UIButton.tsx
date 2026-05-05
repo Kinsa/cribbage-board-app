@@ -17,7 +17,7 @@ const NEW_GAME_ICON = `<svg width="16" height="18" viewBox="0 0 16 18" xmlns="ht
 
 const BUTTON_ATTRIBUTES = {
   undo: { label: 'Undo', icon: UNDO_ICON },
-  clear: { label: 'Reset Count', icon: CLEAR_ICON },
+  clear: { label: 'New Count', icon: CLEAR_ICON },
   newGame: { label: 'New', icon: NEW_GAME_ICON },
 };
 
