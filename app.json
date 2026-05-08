@@ -4,7 +4,6 @@
     "slug": "cribbage-game-board",
     "version": "5.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
     "scheme": "cribbageboardapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -13,11 +12,6 @@
       "bundleIdentifier": "com.Kinsa.Cribbage-Board",
       "buildNumber": "1",
       "icon": "./assets/app.icon"
-    },
-    "web": {
-      "bundler": "metro",
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
       "expo-router",
