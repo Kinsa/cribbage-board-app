@@ -93,6 +93,22 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
     - **Winner**: Winner announcement page. Indicates a win, skunk, or double skunk and by which player.
 - **Game Interactions Prototype**: Prototypes the Add, Clear, and Undo button interactions relative to the Current Points Value and Total Points Value.
 
+### Sampling of Viewport Sizes to Account For
+
+#### Phone
+
+- **iPhone 17** 402 x 874
+- **iPhone 17 Pro Max** 430 x 932
+
+#### Tablet
+
+- **iPad Mini** 744 x 1133
+- **iPad** 820 x 1180
+- **iPad Air 11-inch** 820 x 1180
+- **iPad Pro 11-inch** 834 x 1210
+- **iPad Air 13-inch** 1024 x 1366
+- **iPad Pro 13-inch** 1032 x 1376
+
 ## Implementation Status
 
 - [x] High-Fidelity Comp
@@ -121,7 +137,7 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
     - [ ] Color tokens using https://storybook.js.org/addons/storybook-design-token
 - [x] Develop the Icon
 - [-] Develop the Win screen variations
-  - [ ] Update tests to include Game Context, routing, and win screen player styling 
+  - [ ] Update tests to include Game Context, routing, and win screen player styling and rotation
   - [x] Style the Win screen
 - [x] Update the UI button text style to match change in Figma (12pt font above button)
 - [x] Update the Clear button to say "Reset Count"
@@ -146,12 +162,13 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
     - [ ] Figure out how to test without building if possible: did deleting the png version reset the light version of the icon?
 - [x] Replace the `assets/splash-icon.png`
 - [ ] Update to [Expo 55](https://expo.dev/changelog/sdk-55)
+- [x] Scale the design to better fit on iPad
+    - [x] Test on all iPad models
+    - [x] Revise position of components for 13" iPads
+    - [x] Update automated tests to pass with changes
+- [ ] Update App Store listing with iPad screenshots in both orientations
 
 ### Phase 2
-
-#### Better iPad support
-
-- [ ] Can the design be scaled to better fill the space for iPad?
 
 #### Android support
 

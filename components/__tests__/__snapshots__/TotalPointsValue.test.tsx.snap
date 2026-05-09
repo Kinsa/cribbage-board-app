@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly for player 1 with 5 points 1`] = `
 <View
@@ -14,7 +14,7 @@ exports[`renders correctly for player 1 with 5 points 1`] = `
       },
       {
         "bottom": "75%",
-        "right": 224,
+        "left": 230,
         "transform": [
           {
             "rotate": "180deg",
@@ -73,7 +73,7 @@ exports[`renders correctly for player 2 with 42 points 1`] = `
         "position": "absolute",
       },
       {
-        "left": 224,
+        "right": 230,
         "top": "75%",
       },
     ]

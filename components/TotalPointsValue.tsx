@@ -1,7 +1,7 @@
 import { GAME_CONFIG } from '@/constants/gameConfig';
 import { useTheme } from '@/contexts/ThemeContext';
 import variables from '@kinsa/cribbage-board-app-tokens';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 
 const SKUNK_SVG = `<svg width="11" height="14" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -24,7 +24,7 @@ interface TotalPointsValueProps {
   otherPlayersPoints: number;
 }
 
-function createStyles(colorScheme: 'light' | 'dark') {
+function createStyles(colorScheme: 'light' | 'dark', positionX: number, positionY: string) {
   return StyleSheet.create({
     view: {
       position: 'absolute',
@@ -35,13 +35,13 @@ function createStyles(colorScheme: 'light' | 'dark') {
       gap: 8,
     },
     viewPlayer1: {
-      right: 224,
-      bottom: '75%',
+      left: positionX,
+      bottom: positionY,
       transform: [{ rotate: '180deg' }],
     },
     viewPlayer2: {
-      left: 224,
-      top: '75%',
+      right: positionX,
+      top: positionY,
     },
     text: {
       fontWeight: 'bold',
@@ -119,7 +119,35 @@ export default function TotalPointsValue({
   otherPlayersPoints,
 }: TotalPointsValueProps) {
   const { colorScheme } = useTheme();
-  const styles = createStyles(colorScheme);
+  const windowDimensions = useWindowDimensions();
+
+  let positionX = 96;
+  let positionY = '75%';
+
+  // iPads
+  if (windowDimensions.width >= 500) {
+    if (windowDimensions.width < windowDimensions.height) {
+      // Portrait orientation on larger devices (like iPads)
+      positionX = 230;
+    } else {
+      // Landscape orientation on larger devices
+      positionX = 550;
+      positionY = '85%';
+    }
+  }
+
+  // 13-inch iPads
+  if (windowDimensions.width >= 1000) {
+    if (windowDimensions.width < windowDimensions.height) {
+      // Portrait orientation on larger devices (like iPads)
+      positionX = 390;
+    } else {
+      // Landscape orientation on larger devices
+      positionX = 750;
+    }
+  }
+
+  const styles = createStyles(colorScheme, positionX, positionY);
 
   return (
     <View

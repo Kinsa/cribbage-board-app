@@ -1,13 +1,13 @@
 import { useTheme } from '@/contexts/ThemeContext';
 import variables from '@kinsa/cribbage-board-app-tokens';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, useWindowDimensions } from 'react-native';
 
 interface CurrentPointsValueProps {
   player: number;
   points: number;
 }
 
-function createStyles(colorScheme: 'light' | 'dark') {
+function createStyles(colorScheme: 'light' | 'dark', positionX: number, positionY: string) {
   return StyleSheet.create({
     text: {
       position: 'absolute',
@@ -17,20 +17,35 @@ function createStyles(colorScheme: 'light' | 'dark') {
     textPlayer1: {
       color: variables[colorScheme].text.player1.primary,
       transform: [{ rotate: '180deg' }],
-      left: 32,
-      bottom: '65%',
+      left: positionX,
+      bottom: positionY,
     },
     textPlayer2: {
       color: variables[colorScheme].text.player2.primary,
-      right: 32,
-      top: '65%',
+      right: positionX,
+      top: positionY,
     },
   });
 }
 
 export default function CurrentPointsValue({ player, points }: CurrentPointsValueProps) {
   const { colorScheme } = useTheme();
-  const styles = createStyles(colorScheme);
+  const windowDimensions = useWindowDimensions();
+
+  let positionX = 32;
+  let positionY = '65%';
+  if (windowDimensions.width >= 500) {
+    if (windowDimensions.width < windowDimensions.height) {
+      // Portrait orientation on larger devices (like iPads)
+      positionX = 100;
+      positionY = '60%';
+    } else {
+      // Landscape orientation on larger devices
+      positionX = 280;
+    }
+  }
+
+  const styles = createStyles(colorScheme, positionX, positionY);
 
   return (
     <Text

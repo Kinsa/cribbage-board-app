@@ -1,15 +1,14 @@
 import { useTheme } from '@/contexts/ThemeContext';
 import variables from '@kinsa/cribbage-board-app-tokens';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, useWindowDimensions } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 
 interface CribbageBoardProps {
   player1Points: number;
   player2Points: number;
-  width?: number;
 }
 
-function createStyles() {
+function createStyles(rotation: string) {
   return StyleSheet.create({
     container: {
       alignItems: 'center',
@@ -20,7 +19,7 @@ function createStyles() {
     boardContainer: {
       alignItems: 'center',
       marginBottom: 20,
-      transform: [{ rotate: '15deg' }],
+      transform: [{ rotate: rotation }],
     },
     svg: {
       // Scale up for better visibility
@@ -29,17 +28,26 @@ function createStyles() {
   });
 }
 
-export default function CribbageBoard({
-  player1Points,
-  player2Points,
-  width = 52,
-}: CribbageBoardProps) {
+export default function CribbageBoard({ player1Points, player2Points }: CribbageBoardProps) {
   const { colorScheme } = useTheme();
-  const styles = createStyles();
+  const windowDimensions = useWindowDimensions();
+
+  let width = 30;
+  let rotation = '15deg';
+  if (windowDimensions.width >= 500) {
+    if (windowDimensions.width < windowDimensions.height) {
+      // Portrait orientation on larger devices (like iPads)
+      width = 60;
+    } else {
+      // Landscape orientation on larger devices
+      rotation = '55deg';
+      width = 55;
+    }
+  }
+  const styles = createStyles(rotation);
 
   const aspectRatio = 388 / 56; // height/width
   const height = width * aspectRatio;
-
   // outside track
   const player1TrackPath =
     'M1 381V26C1 12.1929 12.1929 1 26 1V1C39.8071 1 51 12.1565 51 25.9637C51 132.082 51 313.33 51 366.149C51 374.433 44.2843 381 36 381V381C27.7157 381 21 374.37 21 366.085C21 312.132 21 125.111 21 26.5';

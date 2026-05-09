@@ -243,7 +243,7 @@ export default function HomeScreen() {
         </View>
         {lastPointsAddedForPlayer === 1 && <TurnScore player={1} points={player1TurnPoints} />}
         <TotalScore player={1} playersPoints={player1Points} otherPlayersPoints={player2Points} />
-        <CribbageBoard player1Points={player1Points} player2Points={player2Points} width={30} />
+        <CribbageBoard player1Points={player1Points} player2Points={player2Points} />
         <TotalScore player={2} playersPoints={player2Points} otherPlayersPoints={player1Points} />
         {lastPointsAddedForPlayer === 2 && <TurnScore player={2} points={player2TurnPoints} />}
         <View style={[styles.buttonRow, styles.buttonRowPlayer2]}>
