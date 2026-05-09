@@ -11,7 +11,8 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.Kinsa.Cribbage-Board",
       "buildNumber": "1",
-      "icon": "./assets/app.icon"
+      "icon": "./assets/app.icon",
+      "usesNonExemptEncryption": false
     },
     "plugins": [
       "expo-router",
