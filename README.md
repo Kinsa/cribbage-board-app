@@ -167,6 +167,12 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
     - [x] Revise position of components for 13" iPads
     - [x] Update automated tests to pass with changes
 - [ ] Update App Store listing with iPad screenshots in both orientations
+- [ ] Review accessibility features: (these can be set in App Accessibility in App Store Connect)
+    - Voice Over - Using Apple's VoiceOver screen reader, users can navigate an app's interface without needing to see the screen. Many people who are blind or have low vision use VoiceOver to understand and control apps.
+    - Voice Control - Using Apple's Voice Control feature, users with reduced mobility or dexterity can navigate an app's interface using only their voice. When looking at the screen, they can use commands like "tap", "click", or "swipe" to interact with on-screen elements.
+    - Larger Text - Users can adjust the size of text and icons to make them more legible, visible, and comfortable to read.
+        - [ ] Fix: score values increase but get clipped; button labels stay the same size
+    - [ ] At time of release, publish updated App Accessibility Draft
 
 ### Phase 2
 

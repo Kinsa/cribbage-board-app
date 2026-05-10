@@ -44,6 +44,7 @@ export default function CribbageBoard({ player1Points, player2Points }: Cribbage
       width = 55;
     }
   }
+
   const styles = createStyles(rotation);
 
   const aspectRatio = 388 / 56; // height/width

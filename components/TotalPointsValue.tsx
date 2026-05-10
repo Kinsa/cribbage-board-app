@@ -140,10 +140,11 @@ export default function TotalPointsValue({
   if (windowDimensions.width >= 1000) {
     if (windowDimensions.width < windowDimensions.height) {
       // Portrait orientation on larger devices (like iPads)
-      positionX = 390;
+      positionX = 350;
     } else {
       // Landscape orientation on larger devices
-      positionX = 750;
+      positionX = 800;
+      positionY = '100%';
     }
   }
 

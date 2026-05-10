@@ -9,23 +9,47 @@ import { useTheme } from '@/contexts/ThemeContext';
 import { useIOSShakeToUndo } from '@/utils';
 import variables from '@kinsa/cribbage-board-app-tokens';
 import { Stack, useRouter } from 'expo-router';
-import { Alert, StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View, useWindowDimensions } from 'react-native';
 
-function createStyles(colorScheme: 'light' | 'dark') {
+function createStyles(colorScheme: 'light' | 'dark', windowDimensions: any) {
+  let paddingHorizontal = 8;
+  let paddingBottom = 32;
+  let paddingTop = 56;
+  let buttonRowGap = 16;
+  let uiButtonGap = 16;
+
+  // iPads (sans the Mini)
+  if (windowDimensions.width >= 800) {
+    paddingHorizontal = 48;
+    paddingBottom = 64;
+    paddingTop = 64;
+    buttonRowGap = 24;
+    uiButtonGap = 24;
+  }
+
+  // 13-inch iPads
+  if (windowDimensions.width >= 1000) {
+    paddingHorizontal = 72;
+    paddingBottom = 128;
+    paddingTop = 128;
+    buttonRowGap = 32;
+    uiButtonGap = 36;
+  }
+
   return StyleSheet.create({
     view: {
       backgroundColor: variables[colorScheme].surface.canvas,
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      paddingBottom: 32,
-      paddingTop: 56,
-      paddingHorizontal: 8,
+      paddingBottom: paddingBottom,
+      paddingTop: paddingTop,
+      paddingHorizontal: paddingHorizontal,
       position: 'relative',
     },
     buttonRow: {
       flex: 1,
-      gap: 8,
+      gap: buttonRowGap,
       width: '100%',
     },
     buttonRowPlayer1: {
@@ -38,7 +62,7 @@ function createStyles(colorScheme: 'light' | 'dark') {
     },
     uiButtonRow: {
       flexDirection: 'row',
-      gap: 16,
+      gap: uiButtonGap,
       padding: 8,
     },
     uiButtonRowPlayer1: {
@@ -49,7 +73,8 @@ function createStyles(colorScheme: 'light' | 'dark') {
 
 export default function HomeScreen() {
   const { colorScheme } = useTheme();
-  const styles = createStyles(colorScheme);
+  const windowDimensions = useWindowDimensions();
+  const styles = createStyles(colorScheme, windowDimensions);
 
   const router = useRouter();
 
