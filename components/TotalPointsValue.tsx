@@ -35,12 +35,12 @@ function createStyles(colorScheme: 'light' | 'dark', positionX: number, position
       gap: 8,
     },
     viewPlayer1: {
-      left: positionX,
+      right: positionX,
       bottom: positionY,
       transform: [{ rotate: '180deg' }],
     },
     viewPlayer2: {
-      right: positionX,
+      left: positionX,
       top: positionY,
     },
     text: {
@@ -121,32 +121,38 @@ export default function TotalPointsValue({
   const { colorScheme } = useTheme();
   const windowDimensions = useWindowDimensions();
 
-  let positionX = 96;
+  let positionX = '58%';
   let positionY = '75%';
 
-  // iPads
-  if (windowDimensions.width >= 500) {
-    if (windowDimensions.width < windowDimensions.height) {
-      // Portrait orientation on larger devices (like iPads)
-      positionX = 230;
-    } else {
-      // Landscape orientation on larger devices
-      positionX = 550;
-      positionY = '85%';
-    }
+  // Landscape Orientation on iPads
+  if (windowDimensions.height < 800 && windowDimensions.width > windowDimensions.height) {
+    positionX = '80%';
+    positionY = '79%';
+  }
+
+  if (windowDimensions.height > 1200 && windowDimensions.width > 800) {
+    // 11-inch iPads in Portrait
+    positionX = '82%';
+    positionY = '30%';
+  }
+
+  if (windowDimensions.height > 800 && windowDimensions.width > 1200) {
+    // 11-inch iPads in Landscape
+    positionX = '84%';
+    positionY = '58%';
   }
 
   // 13-inch iPads
-  if (windowDimensions.width >= 1000) {
-    if (windowDimensions.width < windowDimensions.height) {
-      // Portrait orientation on larger devices (like iPads)
-      positionX = 350;
-    } else {
-      // Landscape orientation on larger devices
-      positionX = 800;
-      positionY = '100%';
-    }
-  }
+  // if (windowDimensions.width >= 1000) {
+  //   if (windowDimensions.width < windowDimensions.height) {
+  //     // Portrait orientation on larger devices (like iPads)
+  //     positionX = 350;
+  //   } else {
+  //     // Landscape orientation on larger devices
+  //     positionX = 800;
+  //     positionY = '100%';
+  //   }
+  // }
 
   const styles = createStyles(colorScheme, positionX, positionY);
 

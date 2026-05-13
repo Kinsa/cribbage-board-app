@@ -143,7 +143,6 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
 - [x] Update the Clear button to say "Reset Count"
 - [x] Develop new game dialog using an [alert](https://reactnative.dev/docs/alert) when the Undo button is long pressed
 - [x] Develop night mode; use cmd + shift + a to shift the simulator between light and dark mode
-- [ ] Update the image and the copyright on the marketing site at https://apps.kinsacreative.com
 - [x] Address this warning: This app was built with the iOS 18.5 SDK. Starting April 28, 2026, all iOS and iPadOS apps must be built with the iOS 26 SDK or later, included in Xcode 26 or later, in order to be uploaded to App Store Connect or submitted for distribution.
     - [x] Update to Expo 54
 - [x] [Add a .icon file](https://expo.dev/changelog/sdk-54) built with Icon composer with proper light and dark versions
@@ -159,38 +158,40 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
     ```
 
     - [Tutorial](https://developer.apple.com/videos/play/wwdc2025/361/)
-    - [ ] Figure out how to test without building if possible: did deleting the png version reset the light version of the icon?
 - [x] Replace the `assets/splash-icon.png`
-- [ ] Update to [Expo 55](https://expo.dev/changelog/sdk-55)
 - [x] Scale the design to better fit on iPad
     - [x] Test on all iPad models
     - [x] Revise position of components for 13" iPads
     - [x] Update automated tests to pass with changes
-- [ ] Update App Store listing with iPad screenshots in both orientations
+- [x] Update App Store listing with iPad screenshots in both orientations
+- [x] At time of release, publish updated App Accessibility Draft
+- [ ] Update the image and the copyright on the marketing site at https://apps.kinsacreative.com
+
+### Phase 2
+
+- [ ] Update to [Expo 55](https://expo.dev/changelog/sdk-55)
+    - may need to start with a blank project and copy in components?
 - [ ] Review accessibility features: (these can be set in App Accessibility in App Store Connect)
     - Voice Over - Using Apple's VoiceOver screen reader, users can navigate an app's interface without needing to see the screen. Many people who are blind or have low vision use VoiceOver to understand and control apps.
     - Voice Control - Using Apple's Voice Control feature, users with reduced mobility or dexterity can navigate an app's interface using only their voice. When looking at the screen, they can use commands like "tap", "click", or "swipe" to interact with on-screen elements.
     - Larger Text - Users can adjust the size of text and icons to make them more legible, visible, and comfortable to read.
         - [ ] Fix: score values increase but get clipped; button labels stay the same size
-    - [ ] At time of release, publish updated App Accessibility Draft
-
-### Phase 2
 
 #### Android support
 
 - [ ] Add Android support
-
-#### Win tracking
-
-- UI idea: dot in winning colour indicate a win, after a second win add a number indicating the total e.g. •2, tap the area to access an overview screen and reset the count. Retain in perpetuity (or until reset).
-    - Upsell: Save account, name account, name opponents and switch between them
-        - Colour picker
 
 ### Exploration
 
 - [x] Does the Win screen need a new game button?
 - [ ] On the win screen, could the tail wag?
 - [ ] On the win screen, if it is a skunk or double skunk could their be a poot cloud or double poot cloud behind the tail?
+- [ ] Win tracking
+    - UI idea: dot in winning colour indicate a win, after a second win add a number indicating the total e.g. •2, tap the area to access an overview screen and reset the count. Retain in perpetuity (or until reset).
+        - Upsell: Save account, name account, name opponents and switch between them
+            - Colour picker
+- [ ] Grid based layout? (starts to fall apart as it scales for iPads)
+- [ ] Lay out total scores with both player points -- you in bold, other in normal text, separated by a pipe, over 121
 
 ## Tech Stack
 

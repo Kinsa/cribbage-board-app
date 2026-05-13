@@ -32,8 +32,9 @@ export default function CurrentPointsValue({ player, points }: CurrentPointsValu
   const { colorScheme } = useTheme();
   const windowDimensions = useWindowDimensions();
 
-  let positionX = 32;
-  let positionY = '65%';
+  let positionX = 20;
+  let positionY = '60%';
+
   if (windowDimensions.width >= 500) {
     if (windowDimensions.width < windowDimensions.height) {
       // Portrait orientation on larger devices (like iPads)
@@ -41,8 +42,20 @@ export default function CurrentPointsValue({ player, points }: CurrentPointsValu
       positionY = '60%';
     } else {
       // Landscape orientation on larger devices
-      positionX = 280;
+      positionX = 100;
     }
+  }
+
+  if (windowDimensions.height > 1200 && windowDimensions.width > 800) {
+    // 11-inch iPads in Portrait
+    positionX = 230;
+    positionY = '75%';
+  }
+
+  if (windowDimensions.height > 800 && windowDimensions.width > 1200) {
+    // 11-inch iPads in Landscape
+    positionX = 280;
+    positionY = '78%';
   }
 
   const styles = createStyles(colorScheme, positionX, positionY);

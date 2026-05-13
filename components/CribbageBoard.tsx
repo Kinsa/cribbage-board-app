@@ -41,8 +41,13 @@ export default function CribbageBoard({ player1Points, player2Points }: Cribbage
     } else {
       // Landscape orientation on larger devices
       rotation = '55deg';
-      width = 55;
+      width = 50;
     }
+  }
+
+  if (windowDimensions.width > 1360 && windowDimensions.height > 1020) {
+    // 13-inch iPads in Landscape
+    width = 64;
   }
 
   const styles = createStyles(rotation);
