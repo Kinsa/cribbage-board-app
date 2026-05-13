@@ -2,7 +2,7 @@
   "expo": {
     "name": "Cribbage Game Board",
     "slug": "cribbage-game-board",
-    "version": "5.0.0",
+    "version": "5.0.1",
     "orientation": "portrait",
     "scheme": "cribbageboardapp",
     "userInterfaceStyle": "automatic",
