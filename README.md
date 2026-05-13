@@ -165,7 +165,7 @@ Figma variables are manually kept in sync with the [Design Tokens repo](https://
     - [x] Update automated tests to pass with changes
 - [x] Update App Store listing with iPad screenshots in both orientations
 - [x] At time of release, publish updated App Accessibility Draft
-- [ ] Update the image and the copyright on the marketing site at https://apps.kinsacreative.com
+- [x] Update the image and the copyright on the marketing site at https://apps.kinsacreative.com
 
 ### Phase 2
 
